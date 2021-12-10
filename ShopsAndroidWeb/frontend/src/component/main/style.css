@@ -1,0 +1,88 @@
+*{
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.main_box{
+    display: flex;
+    width: 100%;
+}
+
+.imgmain_main{
+    max-height: 500px;
+    margin: auto;
+    width: 80%;
+    justify-content: center;
+    height: 100%;
+}
+
+.black{
+    width: 100%;
+    background: black;
+}
+
+.text_main{
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    margin-left: 6%;
+    margin-top: 10%;
+    letter-spacing: 0px;
+    line-height: 50px;
+    font-family: proxima-nova, sans-serif
+    rbno, Helvetica, sans-serif
+    HPSimplifiedLight;
+    font-size: 60px;
+    position: absolute;
+}
+
+.sub-text{
+    margin-top: 1%;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.img-tile{
+    width: auto;
+    height: 80%;
+}
+
+.img-tile:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background: #f4f4f4;
+    margin: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 22%;
+}
+
+.card-box{
+    display: flex;
+}
+
+.r_image{
+    height: 80%;
+}
+
+@font-face {
+    font-family: 'RBNo2.1';
+    src: local('RBNo2.1 a Hairline'), local('RBNo2.1-a-Hairline'),
+        url('../../fonts/RBNo21a-Medium.woff2') format('woff2'),
+        url('../../fonts/RBNo21a-Medium.woff') format('woff'),
+        url('../../fonts/RBNo21a-Medium.ttf') format('truetype');
+}
+
+.tile_sub_text{
+    font-family: 'RBNo2.1';
+    letter-spacing: 1px;
+    margin-top: 4%;
+    font-size: 120%;
+    height: 10px;
+    text-align: center;
+    line-height: 87%;
+}
