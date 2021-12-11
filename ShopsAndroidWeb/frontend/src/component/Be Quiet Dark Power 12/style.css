@@ -22,13 +22,12 @@ header{
 }
 
 .boda{
-    padding: 10px;
     display: flex;
 }
 .m-main{
     margin-top: 30px;
     font-size: 50px;
-    margin-left: 10%;
+    margin-left: 6%;
     text-shadow: 2px 2px 9px rgb(0, 0, 0);
     color: rgba(255, 0, 0, 0.548);
     background: #959595;
@@ -57,4 +56,19 @@ header{
 
 .list-desc{
     margin-top: 5%;
+}
+
+.features-top-text{
+    background: transparent;
+    color: rgb(221, 214, 214);
+    margin-top: 10%;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: overline;
+}
+
+.m-1pt{
+    margin-top: -6%;
+    margin-left: -8%;
+    height: 640px;
 }
