@@ -6,22 +6,13 @@ import Photo_main from '../shop/image/dark_power_12.png';
 export default function DarkPower() {
     return (
         <html>
-            <head></head>
-            <body>
-                <Carousel>
-                    <Carousel.Item>
-                        <img src={Photo_main} alt="alt mma"/>
-                        <Carousel.Caption>
-                            <p>First photo</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={Photo_main} alt="alt mma"/>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={Photo_main} alt="alt mma"/>
-                    </Carousel.Item>
-                </Carousel>
+            <header>
+                <hr className="hr"/>
+                <h1 className="main-center-text">Happy Holidays</h1>
+                <hr className="hr"/>
+            </header>
+            <body className="boda">
+                <h1 className="main-text">Be Quiet! Dark Power 12 1000W</h1>
             </body>
         </html>
     )

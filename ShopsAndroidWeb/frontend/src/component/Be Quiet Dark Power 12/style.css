@@ -1,7 +1,15 @@
-*{
-    color: black;
+header{
+    padding-top: 10px;
+}
+.hr{
+    border: 3px dotted rgb(190, 190, 190);
+    width: 99.5%;
 }
 
-.h{
-    color: black;
+.main-text{
+    font-weight: 400;
+}
+
+.boda{
+    padding: 10px;
 }
