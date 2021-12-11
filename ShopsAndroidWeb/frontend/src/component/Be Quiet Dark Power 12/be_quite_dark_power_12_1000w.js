@@ -1,7 +1,5 @@
 import React from "react";
 import './style.css';
-import Carousel from 'react-bootstrap/Carousel';
-import Photo_main from '../shop/image/dark_power_12.png';
 
 export default function DarkPower() {
     return (
