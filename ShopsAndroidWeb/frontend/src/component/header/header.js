@@ -13,7 +13,6 @@ export default function Header() {
             <body className="body">
                 <div className="top-bar">
                     <div className="links-box">
-                        <img className="imgmain" onClick={main} src={main_text} alt="main text"></img>
                         <a href="/shop" className="butt-link">Магазин</a>
                         <a href="/about" className="butt-link">Про нас</a>
                         <a href="/" className="butt-link">Контактна інформація</a>

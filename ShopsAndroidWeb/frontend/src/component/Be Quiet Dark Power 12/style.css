@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'RobotoMedium';
+    src: local('Roboto Medium'), local('Roboto-Medium'),
+        url('./fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+.html{
+    background-image: url('./image/bg_photo.jpg');
+    background-size: cover;
+}
+
 header{
     padding-top: 10px;
 }
@@ -12,4 +23,38 @@ header{
 
 .boda{
     padding: 10px;
+    display: flex;
+}
+.m-main{
+    margin-top: 30px;
+    font-size: 50px;
+    margin-left: 10%;
+    text-shadow: 2px 2px 9px rgb(0, 0, 0);
+    color: rgba(255, 0, 0, 0.548);
+    background: #959595;
+    background: -webkit-linear-gradient(to right, #959595 0%, #0D0D0D 46%, #b40000 50%, #b40000 53%, #b40000 76%, #b40000 87%, #b40000 100%);
+    background: -moz-linear-gradient(to right, #959595 0%, #b40000 46%, #b40000 50%, #b40000 0%, #b40000 0%, #b40000 87%, #b40000 100%);
+    background: linear-gradient(to right, #959595 0%, #b40000 46%, #b40000 50%, #b40000 0%, #b40000 0%, #b40000 100%, #b40000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'RobotoMedium', sans-serif;
+}
+
+.img-main{
+    margin-left: 2%;
+    margin-top: 2%;
+    max-height: 350px;
+}
+
+.d-m-text{
+    font-size: 20px;
+}
+
+.li{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.list-desc{
+    margin-top: 5%;
 }
