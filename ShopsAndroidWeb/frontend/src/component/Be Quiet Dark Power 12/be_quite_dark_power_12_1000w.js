@@ -2,6 +2,7 @@ import React from "react";
 import './style.css';
 import Image from './image/dark_power_12.png'
 import БП from './image/m_1000w.png'
+import Chip from './image/chip_1000w.png'
 
 export default function DarkPower() {
     return (
@@ -32,14 +33,26 @@ export default function DarkPower() {
                     <h4 className="features-top-text">Характеристики</h4>
                     <h4 className="m-main">СЕРТИФІКАЦІЯ 80 PLUS® TITANIUM</h4>
                     <div className="boda">
-                        <h1 className="m-main d-m-text">Dark Power Pro 12 1500W має
+                        <h1 className="m-main d-m-text features-d-m-text">Dark Power Pro 12 1500W має
                             сертифікат 80 PLUS Titanium з ефективністю перетворення енергії
                             до 94,9% і забезпечує безліч переваг для вашої системи, включаючи
                             меншу споживану потужність, знижений рівень нагріву і більш тиху
                             роботу. Рівень споживання енергії в режимі «Очікування» (Standby)
                             становить менш 0.1 Вт.</h1>
-                        <img src={БП} className="m-1pt" alt="img elenent" />
+                        <img src={БП} className="m-1pt chip" alt="img elenent" />
                     </div>
+                    <hr />
+                    <h4 className="m-main">ЯПОНСКИЕ КОНДЕНСАТОРЫ 105°C</h4>
+                    <div className="boda">
+                        <h1 className="m-main d-m-text">В Dark Power 12 1000W используются только 
+                        лучшие компоненты. Применение исключительно высококачественных 
+                        японских конденсаторов с температурным режимом 105°C обеспечивает
+                         стабильность, надежность и очень длительный срок эксплуатации.</h1>
+                        <img src={Chip} className="chip" alt="img elenent" />
+                    </div>
+                </div>
+                <div className="send order">
+
                 </div>
             </body>
         </html>

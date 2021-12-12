@@ -13,5 +13,6 @@ namespace ShopsAndroidWeb.Models
         public double Price { get; set; }
         public string Image { get; set; }
         public string TypeProduct { get; set; }
+        public string Link { get; set; }
     }
 }

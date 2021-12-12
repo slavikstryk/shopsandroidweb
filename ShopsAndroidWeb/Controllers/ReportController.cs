@@ -1,11 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ShopsAndroidWeb.Data;
 using ShopsAndroidWeb.Data.Entities;
 using ShopsAndroidWeb.Models;
@@ -14,72 +8,74 @@ namespace ShopsAndroidWeb.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ReportController : Controller
     {
         private readonly EFAppContext _context;
 
-        public ProductsController(EFAppContext context)
+        public ReportController(EFAppContext context)
         {
             _context = context;
         }
+
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            var list = await _context.Products.ToListAsync();
-            return Ok(list);
+            var result = await _context.Reports.ToListAsync();
+            return Ok(result);
         }
 
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var list = await _context.Products.ToListAsync();
+            var list = await _context.Reports.ToListAsync();
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
                 return Ok(item_find);
-            } else 
+            }
+            else
             {
                 var item_find = list.Last();
                 return Ok(item_find);
             }
         }
+
         [HttpPost]
         [Route("post")]
-        public async Task<IActionResult> AddProduct([FromBody] ProductViewModels model)
+        public async Task<IActionResult> AddStatement([FromBody] ReportModel model)
         {
-            var product = new Product
+            var report = new Report
             {
-                Name = model.Name,
-                Description = model.Description,
-                Price = decimal.Parse("" + model.Price),
-                Image = model.Image,
-                TypeProduct = model.TypeProduct,
-                Link = model.Link
-
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
+                Email = model.Email,
+                Product = model.Product,
+                Text = model.Text
             };
-            await _context.Products.AddAsync(product);
+            await _context.Reports.AddAsync(report);
             _context.SaveChanges();
-            return Ok(product.Id);
+            return Ok(report.Id);
         }
 
         [HttpDelete]
         [Route("delete")]
-        public async Task<IActionResult> RemoveProduct(int id)
+        public async Task<IActionResult> RemoveReport(int id)
         {
             id--;
-            var list = await _context.Products.ToListAsync();
+            var list = await _context.Reports.ToListAsync();
             int size = list.Count;
             if (id <= size)
             {
                 var item_delete = list.ElementAt(id);
-                _context.Products.Remove(item_delete);
+                _context.Reports.Remove(item_delete);
                 _context.SaveChanges();
             }
             else
             {
                 id = size--;
                 var item_delete = list.ElementAt(id);
-                _context.Products.Remove(item_delete);
+                _context.Reports.Remove(item_delete);
                 _context.SaveChanges();
             }
             return Ok();

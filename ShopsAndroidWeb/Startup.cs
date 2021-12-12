@@ -22,7 +22,7 @@ namespace ShopsAndroidWeb
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
             services.AddDbContext<EFAppContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
@@ -90,6 +90,8 @@ namespace ShopsAndroidWeb
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
             RoleManager<AppRole> roleManager)
         {
+            app.UseCors(options =>
+                options.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
             if (!roleManager.Roles.Any())
             {
                 var result = roleManager.CreateAsync(new AppRole

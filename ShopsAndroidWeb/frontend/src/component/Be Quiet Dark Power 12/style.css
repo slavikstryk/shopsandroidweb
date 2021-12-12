@@ -6,7 +6,7 @@
 
 .html{
     background-image: url('./image/bg_photo.jpg');
-    background-size: cover;
+    background-size: contain;
 }
 
 header{
@@ -23,6 +23,7 @@ header{
 
 .boda{
     display: flex;
+    overflow: hidden;
 }
 .m-main{
     margin-top: 30px;
@@ -71,4 +72,25 @@ header{
     margin-top: -6%;
     margin-left: -8%;
     height: 640px;
+}
+
+hr{
+    width: 100%;
+}
+
+.chip{
+    background: transparent;
+    transition: all ease 2s;
+    transform: scale(1.0);
+}
+
+.chip:hover{
+    transition: all ease 2s;
+    transform: scale(1.03);
+}
+
+.features-d-m-mtext{
+    margin-top: 50%;
+    height: 100%;
+    text-align: center;
 }

@@ -41,6 +41,8 @@ namespace ShopsAndroidWeb.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Statement> Statements { get; set; }
+        public DbSet<Report> Reports { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
     }
 }

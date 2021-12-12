@@ -160,6 +160,7 @@ hr{
     border-radius: 5px;
     display: flex;
     width: 80%;
+    height: auto;
     margin: 3%;
 }
 
@@ -179,13 +180,19 @@ hr{
 }
 
 .tile-price{
-    vertical-align: middle;
-    height: 60%;
+    height: 80%;
+    width: 100%;
     font-weight: 700;
 }
 
 .link{
-    padding: 10px 35px 10px 35px;
+    align-self: center;
+    padding: 5px 15px 5px 15px;
+    margin-left: 20%;
     border-radius: 10px;
     background: rgb(0, 202, 0);
+}
+
+.two-item{
+    
 }

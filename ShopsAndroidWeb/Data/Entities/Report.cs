@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ShopsAndroidWeb.Models
+namespace ShopsAndroidWeb.Data.Entities
 {
-    public class ReportModel
+    public class Report
     {
         [Key]
         public int Id { get; set; }

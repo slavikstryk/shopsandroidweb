@@ -15,7 +15,6 @@ export default function Header() {
                     <div className="links-box">
                         <img className="imgmain" onClick={main} src={main_text} alt="main text"></img>
                         <a href="/shop" className="butt-link">Магазин</a>
-                        <a href="/about" className="butt-link">Про нас</a>
                         <a href="/" className="butt-link">Контактна інформація</a>
                         <a className="butt-link-two" href="/support">Support</a>
                         <a className="butt-link-two" href="http://www.youtube.com/channel/UCvF0iRcz57YUjp0n6BcrhPQ">Youtube chanell</a>

@@ -1,6 +1,6 @@
 *{
     user-select: none;
-    transition: all 0.3s ease;
+    transition: all 0.9s ease;
 }
 
 .main_box{
@@ -47,7 +47,7 @@
 }
 
 .img-tile:hover{
-    transform: scale(1.03);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
