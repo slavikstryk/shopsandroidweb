@@ -193,6 +193,18 @@ hr{
     background: rgb(0, 202, 0);
 }
 
-.two-item{
-    
+.top-bar-hooper{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(150, 150, 150, 0.836);
+}
+
+.inpt{
+    background: transparent;
+    font-size: 19px;
+    outline: none;
+    border: 0px;
+    border-bottom: 2px solid rgb(119, 119, 119);
+    border-radius: 5px;
 }

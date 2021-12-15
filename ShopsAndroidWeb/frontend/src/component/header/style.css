@@ -23,11 +23,6 @@
   .imgmain:hover{
     cursor: pointer;
   }
-  
-  html{
-    background-size: 60%;
-    min-width: 800px;
-  }
   .body{
     display: flex;
     height: 100%;
