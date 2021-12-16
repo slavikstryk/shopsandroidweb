@@ -6,6 +6,7 @@ import DarkPower12 from './component/Be Quiet Dark Power 12/be_quite_dark_power_
 import Main from './component/main/main'
 import Shop from './component/shop/shop'
 import Support from './component/support/support';
+import Ssd128GB from './component/128GB SSD HyperX/ssd128gb';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <Route exact path="/" component={Main} />
         <Route path="/be quiet dark power 12 1000w" component={DarkPower12}/>
+        <Route path="/ssd 120 GB HyperX" component={Ssd128GB}/>
         <Route path="/shop" component={Shop} />
         <Route path="/support" component={Support}/>
       </body>

@@ -10,6 +10,15 @@
     height: 400px;
 }
 
+.bgm{
+    background-image: url("https://img.freepik.com/free-vector/dark-low-poly-background_1048-7971.jpg?size=626&ext=jpg");
+    background-size: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .category{
     margin-top: -3.7px;
 }
@@ -51,7 +60,6 @@
 }
 
 .work-window{
-    display: flex;
     justify-content: space-between;
 }
 
@@ -150,16 +158,18 @@ hr{
 }
 
 .img-tile-shop{
-    width: 20%;
+    width: 100%;
     height: auto;
 }
 
 .item-product{
-    border: 1px solid rgb(204, 204, 204);
+    border: transparent;
+    background: rgba(255, 255, 255, 0.247);
     padding: 10px;
     border-radius: 5px;
     display: flex;
-    width: 80%;
+    flex-direction: column;
+    width: 10%;
     height: auto;
     margin: 3%;
 }

@@ -20,32 +20,35 @@ export default class Shop extends Component {
     render() {
         return (
             <html>
-                <img className="main-image" src={MainPhoto} alt="img" />
-                <div id="#top-bar-shop" className="top-bar-shop mgt-1pr">
-                </div>
-                <h1 className="main-center-text">Happy Holidays</h1>
-                <h3 className="main-center-text sub-center-text">Discounts on everything up to 20%</h3>
-                <div id="#top-bar-shop" className="top-bar-shop">
-                </div>
-                <div className="top-bar-hooper">
-                    <input
-                        className="inpt"
-                        placeholder="Im search.." />
-                </div>
-                <body className="work-window">
-                    <div className="work-space">
-                        {this.state.products.map(product => <div className="item-product">
-                            <img alt="tite imag" className="img-tile-shop" src={`data:image/jpeg;base64,${product.image}`} />
-                            <div className="tile">
-                                <h3 className="tile">{product.name}</h3>
-                                <h6>{product.description}</h6>
-                            </div>
-                            <div className="two-item">
-                                <h4 className="tile tile-price">{product.price} UAN</h4>
-                                <a className="link" href={"/" + product.link}>BUY</a>
-                            </div>
-                        </div>)}
+                <body>
+                    <img className="main-image" src={MainPhoto} alt="img" />
+                    <div id="#top-bar-shop" className="top-bar-shop mgt-1pr">
                     </div>
+                    <h1 className="main-center-text">Happy Holidays</h1>
+                    <h3 className="main-center-text sub-center-text">Discounts on everything up to 20%</h3>
+                    <div id="#top-bar-shop" className="top-bar-shop">
+                    </div>
+                    <div className="top-bar-hooper">
+                        <input
+                            className="inpt"
+                            placeholder="Im search.." />
+                    </div>
+                    <body>
+                        <div className="bgm">
+                            {this.state.products.map(product => <div className="item-product">
+                                <img alt="tite imag" className="img-tile-shop" src={`data:image/jpeg;base64,${product.image}`} />
+                                <hr/>
+                                <div className="tile">
+                                    <h3 className="tile">{product.name}</h3>
+                                    <h6>{product.description}</h6>
+                                </div>
+                                <div className="two-item">
+                                    <h4 className="tile tile-price">{product.price} UAN</h4>
+                                    <a className="link" href={"/" + product.link}>BUY</a>
+                                </div>
+                            </div>)}
+                        </div>
+                    </body>
                 </body>
             </html >
         )
