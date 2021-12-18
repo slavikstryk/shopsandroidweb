@@ -42,11 +42,14 @@
 }
 
 .img-tile{
+    transition: all ease 0.5s;
+    transform: scale(1);
     width: auto;
     height: 80%;
 }
 
 .img-tile:hover{
+    transition: all ease 0.5s;
     transform: scale(1.05);
     cursor: pointer;
 }

@@ -14,7 +14,7 @@ export default class Shop extends Component {
             .then(res => {
                 const products = res.data;
                 this.setState({ products });
-            })
+            }).catch()
     }
 
     render() {
@@ -28,19 +28,13 @@ export default class Shop extends Component {
                     <h3 className="main-center-text sub-center-text">Discounts on everything up to 20%</h3>
                     <div id="#top-bar-shop" className="top-bar-shop">
                     </div>
-                    <div className="top-bar-hooper">
-                        <input
-                            className="inpt"
-                            placeholder="Im search.." />
-                    </div>
                     <body>
                         <div className="bgm">
                             {this.state.products.map(product => <div className="item-product">
                                 <img alt="tite imag" className="img-tile-shop" src={`data:image/jpeg;base64,${product.image}`} />
-                                <hr/>
                                 <div className="tile">
-                                    <h3 className="tile">{product.name}</h3>
-                                    <h6>{product.description}</h6>
+                                    <h3 className="tile tile-text">{product.name}</h3>
+                                    <h6 className="tile-sub-text">{product.description}</h6>
                                 </div>
                                 <div className="two-item">
                                     <h4 className="tile tile-price">{product.price} UAN</h4>

@@ -20,7 +20,6 @@ export default class Support extends Component {
             .then(responce => {
                 console.log(responce);
             })
-        console.log('data send = ', this.state);
 
         this.setState({
             firstname: '',
@@ -53,7 +52,6 @@ export default class Support extends Component {
 
     render() {
         const { firstname, lastname, phonenumber, email, product, text } = this.state;
-        console.log(this);
         return (
             <html className="support-bg">
                 <header>

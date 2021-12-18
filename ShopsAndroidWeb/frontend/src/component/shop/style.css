@@ -115,7 +115,6 @@ hr{
     border: 0px;
     border-top: 1px solid rgb(216, 216, 216);
     width: 80%;
-    margin: auto;
     color: #aaa;
 }
 
@@ -217,4 +216,12 @@ hr{
     border: 0px;
     border-bottom: 2px solid rgb(119, 119, 119);
     border-radius: 5px;
+}
+
+.tile-text{
+    font-size: 20px;
+}
+
+.tile-sub-text{
+    font-size: 16px;
 }
