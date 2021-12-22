@@ -49,6 +49,7 @@
 
 .main-image-ssd {
     width: auto;
+    height: auto;
     margin: auto;
 }
 
@@ -67,18 +68,18 @@
     font-size: 40px;
 }
 
-.vl {
+.vlram {
     border-left: 3px solid rgb(255, 255, 255, 1);
-    height: 53.1%;
+    height: 51.1%;
     position: absolute;
     left: 10%;
     margin-left: -3px;
     top: 23%;
 }
 
-.vl2 {
+.vl2ram{
     border-left: 4px solid rgb(255, 255, 255, 1);
-    height: 53.1%;
+    height: 50%;
     position: absolute;
     left: 48%;
     margin-left: -3px;
@@ -216,43 +217,29 @@
 
 /* Стилізація кожної лінії в характеристики */
 
-.hr2{
-    width: 17.58%;
+.hr-features-text.hr2{
+    width: 17.5%;
+}
+.hr-features-text.hr3{
+    width: 20.5%;
+}
+.hr-features-text.hr4{
+    width: 14.75%;
+}
+.hr-features-text.hr5{
+    width: 19.33%;
+}
+.hr-features-text.hr6{
+    width: 8.8%;
+}
+.hr-features-text.hr7{
+    width: 13.4%;
+}
+.hr-features-text.hr8{
+    width: 19.5%;
 }
 
-.hr3{
-    width: 20.7%;
-}
 
-.hr4{
-    width: 14.8%;
-}
-
-.hr5{
-    width: 19.2%;
-}
-
-.hr6{
-    width: 8.73%;
-}
-
-.hr7{
-    width: 13.54%;
-}
-
-.hr8{
-    width: 19.52%;
-}
-
-.hr9{
-    width: 16.65%;
-    min-width: 16.65%;
-}
-
-.hr10{
-    width: 24.37%;
-    min-width: 24.37%;
-}
 
 /*Закінчення стилізації ліній*/
 
@@ -312,4 +299,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
+}
+
+.class-size{
+    height: auto;
 }

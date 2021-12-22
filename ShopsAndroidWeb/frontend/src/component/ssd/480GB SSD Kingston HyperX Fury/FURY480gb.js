@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import emailjs from 'emailjs-com';
-import './style.css'
+import '../style.css'
 
 import photo1 from './image/photo-1.png'
 import photo2 from './image/photo-2.png'
@@ -247,49 +247,49 @@ export default class SSD480GBFURY extends Component {
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Країна виробник</h3>
-                            <hr className="hr-features-text hr2" />
+                            <hr className="hr-features-text hr2_ssd" />
                             <h1 className="features-text-t">Китай</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Швидкість читання</h3>
-                            <hr className="hr-features-text hr3" />
+                            <hr className="hr-features-text hr3_ssd" />
                             <h1 className="features-text-t">до 500 МБ/сек</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Швидкість запису</h3>
-                            <hr className="hr-features-text hr4" />
+                            <hr className="hr-features-text hr4_ssd" />
                             <h1 className="features-text-t">до 500 МБ/с</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Енергоспоживання</h3>
-                            <hr className="hr-features-text hr5" />
+                            <hr className="hr-features-text hr5_ssd" />
                             <h1 className="features-text-t">Максимум під час читання: 0.642 Вт<br />
                                 Максимум під час запису: 1.535 Вт<br />
                                 Максимум під час простою: 0.195 Вт</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Час напрацювання на відмову</h3>
-                            <hr className="hr-features-text hr6" />
+                            <hr className="hr-features-text hr6_ssd" />
                             <h1 className="features-text-t">1 мільйон годин</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Форм-фактор</h3>
-                            <hr className="hr-features-text hr7" />
+                            <hr className="hr-features-text hr7_ssd" />
                             <h1 className="features-text-t">2.5"</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Інтерфейс підключення</h3>
-                            <hr className="hr-features-text hr8" />
+                            <hr className="hr-features-text hr8_ssd" />
                             <h1 className="features-text-t">SATAIII</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Тип накопичувача</h3>
-                            <hr className="hr-features-text hr9" />
+                            <hr className="hr-features-text hr9_ssd" />
                             <h1 className="features-text-t">Внутрішній</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Вага</h3>
-                            <hr className="hr-features-text hr10" />
+                            <hr className="hr-features-text hr10_ssd" />
                             <h1 className="features-text-t">57 г</h1>
                         </div>
                     </div>

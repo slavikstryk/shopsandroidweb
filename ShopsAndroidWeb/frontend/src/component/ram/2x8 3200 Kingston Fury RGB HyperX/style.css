@@ -42,12 +42,16 @@
 }
 
 .main-image-box {
-    padding-left: 2rem;
+    display: flex;
+    height: 330px;
+    width: 476px;
 }
 
 .main-image-ssd {
-    height: 330px;
-    width: 476px;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    margin: auto;
 }
 
 .price-set {
@@ -67,7 +71,7 @@
 
 .vl {
     border-left: 3px solid rgb(255, 255, 255, 1);
-    height: 59%;
+    height: 53.1%;
     position: absolute;
     left: 10%;
     margin-left: -3px;
@@ -76,7 +80,7 @@
 
 .vl2 {
     border-left: 4px solid rgb(255, 255, 255, 1);
-    height: 59%;
+    height: 53.1%;
     position: absolute;
     left: 48%;
     margin-left: -3px;
@@ -219,28 +223,27 @@
 }
 
 .hr3{
-    width: 16.4%;
+    width: 20.7%;
 }
 
 .hr4{
-    width: 17.16%;
+    width: 14.8%;
 }
 
 .hr5{
-    width: 16.35%;
+    width: 19.2%;
 }
 
 .hr6{
-    width: 9.6%;
+    width: 8.73%;
 }
 
 .hr7{
-    width: 19.32%;
+    width: 13.54%;
 }
 
 .hr8{
-    width: 13.5%;
-    min-width: 13.5%;
+    width: 19.52%;
 }
 
 .hr9{

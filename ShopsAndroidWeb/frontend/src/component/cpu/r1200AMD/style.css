@@ -214,44 +214,34 @@
 
 /* Стилізація кожної лінії в характеристики */
 
-.hr2{
-    width: 17.58%;
+.hr-features-text.hr2_1200{
+    width: 25.62%;
+}
+.hr-features-text.hr3_1200{
+    width: 24.4%;
+}
+.hr-features-text.hr4_1200{
+    width: 23.15%;
+}
+.hr-features-text.hr5_1200{
+    width: 26.4%;
+}
+.hr-features-text.hr6_1200{
+    width: 25%;
+}
+.hr-features-text.hr7_1200{
+    width: 25%;
+}
+.hr-features-text.hr8_1200{
+    width: 22.4%;
+}
+.hr-features-text.hr9_1200{
+    width: 16.7%;
+}
+.hr-features-text.hr10_1200{
+    width: 20.7%;
 }
 
-.hr3{
-    width: 16.4%;
-}
-
-.hr4{
-    width: 17.16%;
-}
-
-.hr5{
-    width: 16.35%;
-}
-
-.hr6{
-    width: 9.6%;
-}
-
-.hr7{
-    width: 19.32%;
-}
-
-.hr8{
-    width: 13.5%;
-    min-width: 13.5%;
-}
-
-.hr9{
-    width: 16.65%;
-    min-width: 16.65%;
-}
-
-.hr10{
-    width: 24.37%;
-    min-width: 24.37%;
-}
 
 /*Закінчення стилізації ліній*/
 

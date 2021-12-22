@@ -56,7 +56,7 @@ class BuyWindow extends Component {
             from_name: firstname,
             from_lastname: lastname,
             from_email: email,
-            phonenumber: phonenumber,   
+            phonenumber: phonenumber,
             product: this.props.product
         }, "user_FmcGpSttQoK99u0tnhU9x");
     }
@@ -207,11 +207,13 @@ export default class RAM1X4GBFURY extends Component {
                             src={photo4}
                             alt="photo4" />
                     </div>
-                    <div class="vl"></div>
+                    <div class="vlram"></div>
                     <div className="main-image-box">
-                        <img className="main-image-ssd" id="mainimage" src={this.state.src} alt="main_image" />
+                        <div className="class-size">
+                            <img className="main-image-ssd" id="mainimage" src={this.state.src} alt="main_image" />
+                        </div>
                     </div>
-                    <div class="vl2"></div>
+                    <div class="vl2ram"></div>
                     <div className="buy-set">
                         <div className="price-set">
                             <h1 className="normal-text price">879</h1>
@@ -238,7 +240,7 @@ export default class RAM1X4GBFURY extends Component {
                 <hr className="horizonline" />
                 <div className="features-box">
                     <h3 className="features-text">Характеристики <span className="span-name">
-                    Kingston Fury DDR4-3200 4096 MB</span></h3>
+                        Kingston Fury DDR4-3200 4096 MB</span></h3>
                     <div className="features-items">
                         <div className="features-item">
                             <h3 className="features-text-t">Обсяг/Об'єм</h3>
@@ -283,7 +285,7 @@ export default class RAM1X4GBFURY extends Component {
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="RAM Kingston HyperX 1x4GB 3200"/>
+                <BuyWindow product="RAM Kingston HyperX 1x4GB 3200" />
             </body>
         )
     }

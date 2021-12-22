@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class RAM1X4GBFURY extends Component {
+export default class RAM2X4GBFURY extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -181,7 +181,7 @@ export default class RAM1X4GBFURY extends Component {
         return (
             <body className="bg">
                 <div className="top-text-box">
-                    <h1 className="normal-text">Kingston Fury DDR4-3200 4096 MB</h1>
+                    <h1 className="normal-text">Kingston Fury DDR4-3200 2x4096 MB</h1>
                 </div>
                 <div className="work-window">
                     <div className="s-images">
@@ -207,14 +207,14 @@ export default class RAM1X4GBFURY extends Component {
                             src={photo4}
                             alt="photo4" />
                     </div>
-                    <div class="vl"></div>
+                    <div class="vlram"></div>
                     <div className="main-image-box">
                         <img className="main-image-ssd" id="mainimage" src={this.state.src} alt="main_image" />
                     </div>
-                    <div class="vl2"></div>
+                    <div class="vl2ram"></div>
                     <div className="buy-set">
                         <div className="price-set">
-                            <h1 className="normal-text price">879</h1>
+                            <h1 className="normal-text price">1 789</h1>
                             <h2 className="normal-text sub-price">₴</h2>
                             <button className="butt-buy" onClick={this.scroll}>Купити</button>
                         </div>
@@ -238,12 +238,12 @@ export default class RAM1X4GBFURY extends Component {
                 <hr className="horizonline" />
                 <div className="features-box">
                     <h3 className="features-text">Характеристики <span className="span-name">
-                    Kingston Fury DDR4-3200 4096 MB</span></h3>
+                    Kingston Fury DDR4-3200 2x4096 MB</span></h3>
                     <div className="features-items">
                         <div className="features-item">
                             <h3 className="features-text-t">Обсяг/Об'єм</h3>
                             <hr className="hr-features-text" />
-                            <h1 className="features-text-t">4 ГБ</h1>
+                            <h1 className="features-text-t">2x4 ГБ</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Країна виробник</h3>
@@ -283,7 +283,7 @@ export default class RAM1X4GBFURY extends Component {
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="RAM Kingston HyperX 1x4GB 3200"/>
+                <BuyWindow product="RAM Kingston HyperX 2x4GB 3200"/>
             </body>
         )
     }

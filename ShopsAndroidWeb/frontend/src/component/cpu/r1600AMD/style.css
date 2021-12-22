@@ -67,7 +67,7 @@
 
 .vl {
     border-left: 3px solid rgb(255, 255, 255, 1);
-    height: 59%;
+    height: 60%;
     position: absolute;
     left: 10%;
     margin-left: -3px;
@@ -76,7 +76,7 @@
 
 .vl2 {
     border-left: 4px solid rgb(255, 255, 255, 1);
-    height: 59%;
+    height: 60%;
     position: absolute;
     left: 48%;
     margin-left: -3px;
@@ -215,42 +215,40 @@
 /* Стилізація кожної лінії в характеристики */
 
 .hr2{
-    width: 17.58%;
+    width: 25.45%;
 }
 
 .hr3{
-    width: 16.4%;
+    width: 24.12%;
 }
 
 .hr4{
-    width: 17.16%;
+    width: 22.84%;
 }
 
 .hr5{
-    width: 16.35%;
+    width: 26.15%;
 }
 
 .hr6{
-    width: 9.6%;
+    width: 24.8%;
 }
 
 .hr7{
-    width: 19.32%;
+    width: 24.6%;
 }
 
 .hr8{
-    width: 13.5%;
-    min-width: 13.5%;
+    width: 22.2%;
 }
 
 .hr9{
-    width: 16.65%;
-    min-width: 16.65%;
+    width: 12.55%;
 }
 
-.hr10{
-    width: 24.37%;
-    min-width: 24.37%;
+.hr10-s{
+    width: 20.8%;
+    min-width: none;
 }
 
 /*Закінчення стилізації ліній*/

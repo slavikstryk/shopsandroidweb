@@ -20,7 +20,16 @@ import SSD120GBFURY from './component/ssd/120GB SSD Kingston HyperX Fury/FURY120
 import SSD240GBFURY from './component/ssd/240GB SSD Kingston HyperX Fury/FURY240gb';
 import SSD480GBFURY from './component/ssd/480GB SSD Kingston HyperX Fury/FURY480gb';
 
-import RAM1X4GBFURY from './component/ram/4x1GB 3200 Kingston Fury HyperX/1x4GB3200KingstonFuryHyperX';
+import RAM1X4GBFURY from './component/ram/1x4GB 3200 Kingston Fury HyperX/1x4GB3200KingstonFuryHyperX';
+import RAM2X4GBFURY from './component/ram/2x4GB 3200 Kingston Fury HyperX/2x4GB3200KingstonFuryHyperX';
+import RAM2X8GB3200FURYRGB from './component/ram/2x8 3200 Kingston Fury RGB HyperX/2x8GB3200KingstonFuryHyperXRgb';
+import RAM4X8GB3200FURYRGB from './component/ram/4x8 3200 Kingston Fury RGB HyperX/4x8GB3200KingstonFuryHyperXRgb';
+
+import R1200AMD from './component/cpu/r1200AMD/r1200amd';
+import R3500AMD from './component/cpu/r3500AMD/r3500amd';
+import R1600AMD from './component/cpu/r1600AMD/r1600amd';
+
+import I3101000 from './component/cpu/i3-10100/i310100';
 
 function App() {
   return (
@@ -44,6 +53,13 @@ function App() {
         <Route path="/kingston hyperx fury 240 gb" component={SSD240GBFURY}/>
         <Route path="/kingston hyperx fury 480 gb" component={SSD480GBFURY}/>
         <Route path="/kingston hyperx fury 1 x 4 gb 3200" component={RAM1X4GBFURY}/>
+        <Route path="/kingston hyperx fury 2 x 4 gb 3200" component={RAM2X4GBFURY}/>
+        <Route path="/kingston hyperx fury rgb 2 x 8 gb 3200" component={RAM2X8GB3200FURYRGB}/>
+        <Route path="/kingston hyperx fury rgb 4 x 8 gb 3200" component={RAM4X8GB3200FURYRGB}/>
+        <Route path="/amd ryzen 3 1200 sAM4 box 3 2 G h z" component={R1200AMD}/>
+        <Route path="/amd ryzen 5 3500 sAM4 box 3 2 G h z" component={R3500AMD}/>
+        <Route path="/amd ryzen 5 1600 sAM4 box 3 2 G h z" component={R1600AMD}/>
+        <Route path="/intel core i 3 10100 box 3 6 G h z" component={I3101000}/>
         <Route path="/shop" component={Shop} />
         <Route path="/support" component={Support}/>
       </body>
