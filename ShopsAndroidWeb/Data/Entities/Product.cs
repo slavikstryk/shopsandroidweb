@@ -19,6 +19,7 @@ namespace ShopsAndroidWeb.Data.Entities
         public string TypeProduct { get; set; }
         public string Description { get; set; }
         public string Link { get; set; }
+        public string IdentityANDROID { get; set; }
         public virtual ICollection<ProductImage> ProductImages { get; set; }
     }
 }

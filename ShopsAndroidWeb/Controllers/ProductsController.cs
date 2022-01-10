@@ -40,8 +40,16 @@ namespace ShopsAndroidWeb.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
+            object st = new();
             var list = await _context.Products.ToListAsync();
-            return Ok(list);
+            if (list.Count > 0)
+            {
+                st = list;
+            } else if (list.Count <= 0)
+            {
+                st = "Empty list";
+            }
+            return Ok(st);
         }
 
         [HttpGet("get/{id}")]
@@ -77,8 +85,8 @@ namespace ShopsAndroidWeb.Controllers
                 Price = decimal.Parse("" + model.Price),
                 Image = base64Image,
                 TypeProduct = model.TypeProduct,
-                Link = model.Link
-
+                Link = model.Link,
+                IdentityANDROID = model.IndentityANDROID
             };
             await _context.Products.AddAsync(product);
             _context.SaveChanges();

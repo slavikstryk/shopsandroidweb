@@ -40,14 +40,15 @@ export default class Support extends Component {
     }
 
     sucessfull(){
-        const { firstname, phonenumber, email, product, text } = this.state;
-        emailjs.send("service_89ct3jx","template_xv2no2r",{
+        const { firstname, lastname, phonenumber, email, product, text } = this.state;
+        emailjs.send("service_1uhfzde","template_fjpdgn9",{
             from_name: firstname,
+            from_lastname: lastname,
             from_email: email,
             from_phone: phonenumber,
             product: product,
             message: text,
-            }, "user_FmcGpSttQoK99u0tnhU9x");
+            }, "user_jBzVZiOxclqot6cLohXCq");
     }
 
     render() {
