@@ -52,7 +52,7 @@ class BuyWindow extends Component {
 
     sucessfull() {
         const { firstname, lastname, phonenumber, email } = this.state;
-        emailjs.send("service_1uhfzde", "template_mt1b5ag", {
+        emailjs.send("service_1uhfzde", "statement_post", {
             from_name: firstname,
             from_lastname: lastname,
             from_email: email,
