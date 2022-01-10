@@ -214,7 +214,7 @@ export default class R3500AMD extends Component {
                     <div class="vl2"></div>
                     <div className="buy-set">
                         <div className="price-set">
-                            <h1 className="normal-text price">2 519</h1>
+                            <h1 className="normal-text price">4 599</h1>
                             <h2 className="normal-text sub-price">₴</h2>
                             <button className="butt-buy" onClick={this.scroll}>Купити</button>
                         </div>
@@ -238,7 +238,7 @@ export default class R3500AMD extends Component {
                 <hr className="horizonline" />
                 <div className="features-box">
                     <h3 className="features-text">Характеристики <span className="span-name">
-                    AMD Ryzen 5 3500 3.2 GHz / 8MB sAM4 BOX</span></h3>
+                    AMD Ryzen 5 3500 3.2 GHz / 16MB sAM4 BOX</span></h3>
                     <div className="features-items">
                         <div className="features-item">
                             <h3 className="features-text-t">Сімейство процесора</h3>
@@ -258,7 +258,7 @@ export default class R3500AMD extends Component {
                         <div className="features-item">
                             <h3 className="features-text-t">Кількість потоків</h3>
                             <hr className="hr-features-text hr4_3500" />
-                            <h1 className="features-text-t">12</h1>
+                            <h1 className="features-text-t">6</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Техпроцес</h3>

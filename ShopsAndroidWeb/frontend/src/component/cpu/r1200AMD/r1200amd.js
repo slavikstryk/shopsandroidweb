@@ -283,7 +283,7 @@ export default class R1200AMD extends Component {
                         <div className="features-item">
                             <h3 className="features-text-t">Обсяг кеш пам'яті 3 уровня</h3>
                             <hr className="hr-features-text hr9_1200" />
-                            <h1 className="features-text-t">Внутрішній</h1>
+                            <h1 className="features-text-t">8 МБ</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Найменування ядра</h3>
