@@ -49,11 +49,18 @@ import BEQUIETDARKPOWER11550W from './component/psu/BEQUIETDARKPOWER11550W/bequi
 import BEQUIETDARKPOWER11750W from './component/psu/BEQUIETDARKPOWER11750W/bequietdarkpower11750w';
 import BEQUIETDARKPOWER111200W from './component/psu/BEQUIETDARKPOWER111200W/bequietdarkpower111200w';
 
+//CPUFAN
+import IDCOOLINGSE903BBLUE from './component/cpufan/IDCOOLINGSE903BBlue/idcooligse903bblue';
+import IDCOOLINGSE914XTBASIC from './component/cpufan/IDCOOLINGSE914XT/idcooligse914xt';
+import IDCOOLINGSE207XTBLACK from './component/cpufan/IDCOOLINGSE207XTBlack/idcooligse207xtblack';
+import IDCOOLINGAURAFLOWX240SNOW from './component/cpufan/IDCOOLINGSEAURAFLOWX240SNOW/idcooligauraflowx240snow';
+import IDCOOLINGFROSTFLOWX360 from './component/cpufan/IDCOOLINGFROSTFLOWX360/idcooligfrostflowx360';
+
 function App() {
   return (
     <html>
       <head>
-        <title><i>HypeX</i></title>
+        <title><i>ShopX</i></title>
         <link rel="shortcut icon" href='./images/favicon.ico' />
       </head>
       <body>
@@ -92,6 +99,11 @@ function App() {
         <Route path="/be quiet dark power pro 11 5 5 0 w" component={BEQUIETDARKPOWER11550W}/>
         <Route path="/be quiet dark power pro 11 7 5 0 w" component={BEQUIETDARKPOWER11750W}/>
         <Route path="/be quiet dark power pro 11 1 2 0 0 w" component={BEQUIETDARKPOWER111200W}/>
+        <Route path="/id cooling se 903 b blue" component={IDCOOLINGSE903BBLUE}/>
+        <Route path="/id cooling se 914 xt basic" component={IDCOOLINGSE914XTBASIC}/>
+        <Route path="/id cooling se 207 xt black" component={IDCOOLINGSE207XTBLACK}/>
+        <Route path="/id cooling auraflow x 240 snow" component={IDCOOLINGAURAFLOWX240SNOW}/>
+        <Route path="/id cooling frostflow x 360" component={IDCOOLINGFROSTFLOWX360}/>
         <Route path="/shop" component={Shop} />
         <Route path="/support" component={Support}/>
       </body>

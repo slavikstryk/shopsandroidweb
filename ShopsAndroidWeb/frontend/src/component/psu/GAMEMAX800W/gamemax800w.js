@@ -283,7 +283,7 @@ export default class GAMEMAX800W extends Component {
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="GameMax GM-600 600GameMax GM-800 800W" />
+                <BuyWindow product="GameMax GM-800 800W" />
             </body>
         )
     }

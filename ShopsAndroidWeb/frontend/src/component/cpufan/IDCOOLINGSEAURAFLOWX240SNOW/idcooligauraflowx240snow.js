@@ -52,13 +52,13 @@ class BuyWindow extends Component {
 
     sucessfull() {
         const { firstname, lastname, phonenumber, email } = this.state;
-        emailjs.send("service_1uhfzde", "statement_post", {
+        emailjs.send("service_89ct3jx", "statement_post", {
             from_name: firstname,
             from_lastname: lastname,
             from_email: email,
-            phonenumber: phonenumber,
+            phonenumber: phonenumber,   
             product: this.props.product
-        }, "user_jBzVZiOxclqot6cLohXCq");
+        }, "user_FmcGpSttQoK99u0tnhU9x");
     }
 
     render() {
@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class MSIGTX1050 extends Component {
+export default class I910900K extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -181,7 +181,7 @@ export default class MSIGTX1050 extends Component {
         return (
             <body className="bg">
                 <div className="top-text-box">
-                    <h1 className="normal-text">MSI GTX 1050Ti 4Gb Gaming X</h1>
+                    <h1 className="normal-text">ID-COOLING Auraflow X 240 Snow</h1>
                 </div>
                 <div className="work-window">
                     <div className="s-images">
@@ -207,14 +207,14 @@ export default class MSIGTX1050 extends Component {
                             src={photo4}
                             alt="photo4" />
                     </div>
-                    <div class="vl770"></div>
+                    <div class="vl"></div>
                     <div className="main-image-box">
                         <img className="main-image-ssd" id="mainimage" src={this.state.src} alt="main_image" />
                     </div>
-                    <div class="vl2770"></div>
+                    <div class="vl2"></div>
                     <div className="buy-set">
                         <div className="price-set">
-                            <h1 className="normal-text price">9 401</h1>
+                            <h1 className="normal-text price">2 000</h1>
                             <h2 className="normal-text sub-price">₴</h2>
                             <button className="butt-buy" onClick={this.scroll}>Купити</button>
                         </div>
@@ -238,54 +238,79 @@ export default class MSIGTX1050 extends Component {
                 <hr className="horizonline" />
                 <div className="features-box">
                     <h3 className="features-text">Характеристики <span className="span-name">
-                    MSI GTX 1050Ti 4Gb Gaming X</span></h3>
+                    ID-COOLING Auraflow X 240 Snow</span></h3>
                     <div className="features-items">
                         <div className="features-item">
-                            <h3 className="features-text-t">Частота пам'яті</h3>
+                            <h3 className="features-text-t">Призначення</h3>
                             <hr className="hr-features-text" />
-                            <h1 className="features-text-t">7008 МГц</h1>
+                            <h1 className="features-text-t">Охолодження для процесора</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Частота ядра</h3>
-                            <hr className="hr-features-text hr2_770" />
-                            <h1 className="features-text-t">1392 МГц</h1>
+                            <h3 className="features-text-t">Матеріал радіатора</h3>
+                            <hr className="hr-features-text hr2_se903b" />
+                            <h1 className="features-text-t">Алюміній</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Обсяг пам'яті</h3>
-                            <hr className="hr-features-text hr3_770" />
-                            <h1 className="features-text-t">4 ГБ</h1>
+                            <h3 className="features-text-t">Частота обертів</h3>
+                            <hr className="hr-features-text hr3_se903b" />
+                            <h1 className="features-text-t">1800 об/хв, 2100 об/хв (насос)</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Роз'єми</h3>
-                            <hr className="hr-features-text hr4_770" />
-                            <h1 className="features-text-t">DVI<br/>
-                                HDMI<br/>
-                                DisplayPort</h1>
+                            <h3 className="features-text-t">Діаметр вентилятора</h3>
+                            <hr className="hr-features-text hr4_se903b" />
+                            <h1 className="features-text-t">120 нм</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Розрядність шини пам'яті</h3>
-                            <hr className="hr-features-text hr5_770" />
-                            <h1 className="features-text-t">128 біт</h1>
+                            <h3 className="features-text-t">Розміри</h3>
+                            <hr className="hr-features-text hr5_se903b" />
+                            <h1 className="features-text-t">276 x 27 x 120 мм(рідатор) 72 x 72 x 47.3 мм(водоблок)</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Форм-фактор</h3>
-                            <hr className="hr-features-text hr6_770" />
-                            <h1 className="features-text-t">Дискретна</h1>
+                            <h3 className="features-text-t">Максимальний TDP</h3>
+                            <hr className="hr-features-text hr6_se903b" />
+                            <h1 className="features-text-t">250W</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Тип системи охолодження</h3>
-                            <hr className="hr-features-text hr7_770" />
-                            <h1 className="features-text-t">Активна</h1>
+                            <h3 className="features-text-t">Розєм живлення</h3>
+                            <hr className="hr-features-text hr7_se903b" />
+                            <h1 className="features-text-t">4Pin PWM/12 В 4Pin RGB</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Додаткове живлення</h3>
-                            <hr className="hr-features-text hr8_770" />
-                            <h1 className="features-text-t">Немає</h1>
+                            <h3 className="features-text-t">Сокет</h3>
+                            <hr className="hr-features-text hr8_se903b" />
+                            <h1 className="features-text-t">Socket 1150<br/>
+                            Socket 1151<br/>
+                            Socket 1155<br/>
+                            Socket 1156<br/>
+                            Socket 1200<br/>
+                            Socket 1366<br/>
+                            Socket 2011<br/>
+                            Socket 2066<br/>
+                            Socket AM2<br/>
+                            Socket AM2+<br/>
+                            Socket AM3<br/>
+                            Socket AM3+<br/>
+                            Socket AM4<br/>
+                            Socket FM1<br/>
+                            Socket FM2<br/>
+                            Socket FM2+<br/>
+                            Socket TR4<br/>
+                            </h1>
+                        </div>
+                        <div className="features-item">
+                            <h3 className="features-text-t">Максимальний рівень шуму (дБ)</h3>
+                            <hr className="hr-features-text hr9_se903b" />
+                            <h1 className="features-text-t">31-40</h1>
+                        </div>
+                        <div className="features-item">
+                            <h3 className="features-text-t">Підсвічування</h3>
+                            <hr className="hr-features-text hr10_se903b" />
+                            <h1 className="features-text-t">RGB</h1>
                         </div>
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="MSI GTX 1050Ti 4Gb Gaming X" />
+                <BuyWindow product="ID-COOLING Auraflow X240 Snow"/>
             </body>
         )
     }

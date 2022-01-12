@@ -181,7 +181,7 @@ export default class GAMEMAX600W extends Component {
         return (
             <body className="bg">
                 <div className="top-text-box">
-                    <h1 className="normal-text">GameMax GM-400-8CM 400W</h1>
+                    <h1 className="normal-text">GameMax GM-400-8CM 600W</h1>
                 </div>
                 <div className="work-window">
                     <div className="s-images">
