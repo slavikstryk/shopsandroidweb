@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class IDCOOLINGSE207XTBlack extends Component {
+export default class IDCOOLINGZOOMFLOW360XT extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -181,7 +181,7 @@ export default class IDCOOLINGSE207XTBlack extends Component {
         return (
             <body className="bg">
                 <div className="top-text-box">
-                    <h1 className="normal-text">ID-COOLING SE-207-XT Black</h1>
+                    <h1 className="normal-text">ID-COOLING Zoomflow 360XT</h1>
                 </div>
                 <div className="work-window">
                     <div className="s-images">
@@ -214,7 +214,7 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                     <div class="vl2"></div>
                     <div className="buy-set">
                         <div className="price-set">
-                            <h1 className="normal-text price">1 700</h1>
+                            <h1 className="normal-text price">2 800</h1>
                             <h2 className="normal-text sub-price">₴</h2>
                             <button className="butt-buy" onClick={this.scroll}>Купити</button>
                         </div>
@@ -238,7 +238,7 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                 <hr className="horizonline" />
                 <div className="features-box">
                     <h3 className="features-text">Характеристики <span className="span-name">
-                    ID-COOLING SE-207-XT Black</span></h3>
+                    ID-COOLING Zoomflow 360XT</span></h3>
                     <div className="features-items">
                         <div className="features-item">
                             <h3 className="features-text-t">Призначення</h3>
@@ -253,7 +253,7 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                         <div className="features-item">
                             <h3 className="features-text-t">Частота обертів</h3>
                             <hr className="hr-features-text hr3_se903b" />
-                            <h1 className="features-text-t">700-1800 об/хв</h1>
+                            <h1 className="features-text-t">1500 об/хв</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Діаметр вентилятора</h3>
@@ -263,17 +263,17 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                         <div className="features-item">
                             <h3 className="features-text-t">Розміри</h3>
                             <hr className="hr-features-text hr5_se903b" />
-                            <h1 className="features-text-t">157 х 144 х 122 мм</h1>
+                            <h1 className="features-text-t">397х120х27 мм</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Максимальний TDP</h3>
                             <hr className="hr-features-text hr6_se903b" />
-                            <h1 className="features-text-t">280W</h1>
+                            <h1 className="features-text-t">350W</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Розєм живлення</h3>
                             <hr className="hr-features-text hr7_se903b" />
-                            <h1 className="features-text-t">4-pin PWM</h1>
+                            <h1 className="features-text-t">4Pin PWM</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Сокет</h3>
@@ -283,9 +283,9 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                             Socket 1155<br/>
                             Socket 1156<br/>
                             Socket 1200<br/>
+                            Socket 1700<br/>
                             Socket 2011<br/>
                             Socket 2066<br/>
-                            Socket AM4<br/>
                             </h1>
                         </div>
                         <div className="features-item">
@@ -296,12 +296,12 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                         <div className="features-item">
                             <h3 className="features-text-t">Підсвічування</h3>
                             <hr className="hr-features-text hr10_se903b" />
-                            <h1 className="features-text-t">Без підсвітки</h1>
+                            <h1 className="features-text-t">RGB</h1>
                         </div>
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="ID-COOLING SE-207-XT Black"/>
+                <BuyWindow product="ID-COOLING FROSTFLOW X360"/>
             </body>
         )
     }

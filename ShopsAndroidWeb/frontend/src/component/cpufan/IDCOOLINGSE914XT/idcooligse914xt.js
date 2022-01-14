@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class I910900K extends Component {
+export default class IDCOOLINGSE914XT extends Component {
     constructor(props) {
         super(props);
         this.state = {

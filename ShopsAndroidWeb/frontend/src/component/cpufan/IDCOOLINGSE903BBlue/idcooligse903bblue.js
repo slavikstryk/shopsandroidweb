@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class I910900K extends Component {
+export default class IDCOOLINGSE903BBlue extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -258,10 +258,10 @@ export default class I910900K extends Component {
                         <div className="features-item">
                             <h3 className="features-text-t">Діаметр вентилятора</h3>
                             <hr className="hr-features-text hr4_se903b" />
-                            <h1 className="features-text-t">92 нм</h1>
+                            <h1 className="features-text-t">92 мм</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Розмірис</h3>
+                            <h3 className="features-text-t">Розміри</h3>
                             <hr className="hr-features-text hr5_se903b" />
                             <h1 className="features-text-t">113.5 х 72.6 х 122.5 мм</h1>
                         </div>

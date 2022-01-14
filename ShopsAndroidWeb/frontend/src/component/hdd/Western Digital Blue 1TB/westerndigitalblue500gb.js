@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import emailjs from 'emailjs-com';
-import './style.css'
+import '../style.css'
 
 import photo1 from './image/photo-1.png'
 import photo2 from './image/photo-2.png'
@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class IDCOOLINGSE207XTBlack extends Component {
+export default class SSD120GBA400 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -181,7 +181,7 @@ export default class IDCOOLINGSE207XTBlack extends Component {
         return (
             <body className="bg">
                 <div className="top-text-box">
-                    <h1 className="normal-text">ID-COOLING SE-207-XT Black</h1>
+                    <h1 className="normal-text">Kingston A400 120GB 2.5" SATAIII TLC</h1>
                 </div>
                 <div className="work-window">
                     <div className="s-images">
@@ -214,7 +214,7 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                     <div class="vl2"></div>
                     <div className="buy-set">
                         <div className="price-set">
-                            <h1 className="normal-text price">1 700</h1>
+                            <h1 className="normal-text price">769</h1>
                             <h2 className="normal-text sub-price">₴</h2>
                             <button className="butt-buy" onClick={this.scroll}>Купити</button>
                         </div>
@@ -237,71 +237,64 @@ export default class IDCOOLINGSE207XTBlack extends Component {
                 </div>
                 <hr className="horizonline" />
                 <div className="features-box">
-                    <h3 className="features-text">Характеристики <span className="span-name">
-                    ID-COOLING SE-207-XT Black</span></h3>
+                    <h3 className="features-text">Характеристики <span className="span-name">Kingston A400 120GB 2.5" SATAIII TLC</span></h3>
                     <div className="features-items">
                         <div className="features-item">
-                            <h3 className="features-text-t">Призначення</h3>
+                            <h3 className="features-text-t">Обсяг/Об'єм</h3>
                             <hr className="hr-features-text" />
-                            <h1 className="features-text-t">Охолодження для процесора</h1>
+                            <h1 className="features-text-t">120 ГБ</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Матеріал радіатора</h3>
-                            <hr className="hr-features-text hr2_se903b" />
-                            <h1 className="features-text-t">Алюміній</h1>
+                            <h3 className="features-text-t">Країна виробник</h3>
+                            <hr className="hr-features-text hr2_ssd" />
+                            <h1 className="features-text-t">Китай</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Частота обертів</h3>
-                            <hr className="hr-features-text hr3_se903b" />
-                            <h1 className="features-text-t">700-1800 об/хв</h1>
+                            <h3 className="features-text-t">Швидкість читання</h3>
+                            <hr className="hr-features-text hr3_ssd" />
+                            <h1 className="features-text-t">до 500 МБ/сек</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Діаметр вентилятора</h3>
-                            <hr className="hr-features-text hr4_se903b" />
-                            <h1 className="features-text-t">120 нм</h1>
+                            <h3 className="features-text-t">Швидкість запису</h3>
+                            <hr className="hr-features-text hr4_ssd" />
+                            <h1 className="features-text-t">до 320 МБ/с</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Розміри</h3>
-                            <hr className="hr-features-text hr5_se903b" />
-                            <h1 className="features-text-t">157 х 144 х 122 мм</h1>
+                            <h3 className="features-text-t">Енергоспоживання</h3>
+                            <hr className="hr-features-text hr5_ssd" />
+                            <h1 className="features-text-t">Максимум під час читання: 0.642 Вт<br />
+                                Максимум під час запису: 1.535 Вт<br />
+                                Максимум під час простою: 0.195 Вт</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Максимальний TDP</h3>
-                            <hr className="hr-features-text hr6_se903b" />
-                            <h1 className="features-text-t">280W</h1>
+                            <h3 className="features-text-t">Час напрацювання на відмову</h3>
+                            <hr className="hr-features-text hr6_ssd" />
+                            <h1 className="features-text-t">1 мільйон годин</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Розєм живлення</h3>
-                            <hr className="hr-features-text hr7_se903b" />
-                            <h1 className="features-text-t">4-pin PWM</h1>
+                            <h3 className="features-text-t">Форм-фактор</h3>
+                            <hr className="hr-features-text hr7_ssd" />
+                            <h1 className="features-text-t">2.5"</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Сокет</h3>
-                            <hr className="hr-features-text hr8_se903b" />
-                            <h1 className="features-text-t">Socket 1150<br/>
-                            Socket 1151<br/>
-                            Socket 1155<br/>
-                            Socket 1156<br/>
-                            Socket 1200<br/>
-                            Socket 2011<br/>
-                            Socket 2066<br/>
-                            Socket AM4<br/>
-                            </h1>
+                            <h3 className="features-text-t">Інтерфейс підключення</h3>
+                            <hr className="hr-features-text hr8_ssd" />
+                            <h1 className="features-text-t">SATAIII</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Максимальний рівень шуму (дБ)</h3>
-                            <hr className="hr-features-text hr9_se903b" />
-                            <h1 className="features-text-t">31-40</h1>
+                            <h3 className="features-text-t">Тип накопичувача</h3>
+                            <hr className="hr-features-text hr9_ssd" />
+                            <h1 className="features-text-t">Внутрішній</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Підсвічування</h3>
-                            <hr className="hr-features-text hr10_se903b" />
-                            <h1 className="features-text-t">Без підсвітки</h1>
+                            <h3 className="features-text-t">Вага</h3>
+                            <hr className="hr-features-text hr10_ssd" />
+                            <h1 className="features-text-t">41 г</h1>
                         </div>
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="ID-COOLING SE-207-XT Black"/>
+                <BuyWindow product="SSD Kingston A400 120GB"/>
             </body>
         )
     }

@@ -105,7 +105,7 @@ class BuyWindow extends Component {
     }
 }
 
-export default class I910900K extends Component {
+export default class IDCOOLINGFROSTFLOWX360 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -238,7 +238,7 @@ export default class I910900K extends Component {
                 <hr className="horizonline" />
                 <div className="features-box">
                     <h3 className="features-text">Характеристики <span className="span-name">
-                    ID-COOLING Auraflow X 240 Snow</span></h3>
+                    ID-COOLING Frostflow X360</span></h3>
                     <div className="features-items">
                         <div className="features-item">
                             <h3 className="features-text-t">Призначення</h3>

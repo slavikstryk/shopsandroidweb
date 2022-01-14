@@ -55,6 +55,7 @@ import IDCOOLINGSE914XTBASIC from './component/cpufan/IDCOOLINGSE914XT/idcooligs
 import IDCOOLINGSE207XTBLACK from './component/cpufan/IDCOOLINGSE207XTBlack/idcooligse207xtblack';
 import IDCOOLINGAURAFLOWX240SNOW from './component/cpufan/IDCOOLINGSEAURAFLOWX240SNOW/idcooligauraflowx240snow';
 import IDCOOLINGFROSTFLOWX360 from './component/cpufan/IDCOOLINGFROSTFLOWX360/idcooligfrostflowx360';
+import IDCOOLINGZOOMFLOW360XT from './component/cpufan/IDCOOLINGZOOMFLOW360XT/idcooligzoomflow360xt';
 
 function App() {
   return (
@@ -104,6 +105,7 @@ function App() {
         <Route path="/id cooling se 207 xt black" component={IDCOOLINGSE207XTBLACK}/>
         <Route path="/id cooling auraflow x 240 snow" component={IDCOOLINGAURAFLOWX240SNOW}/>
         <Route path="/id cooling frostflow x 360" component={IDCOOLINGFROSTFLOWX360}/>
+        <Route path="/id cooling zoomflow 360 xt" component={IDCOOLINGZOOMFLOW360XT}/>
         <Route path="/shop" component={Shop} />
         <Route path="/support" component={Support}/>
       </body>
