@@ -212,16 +212,16 @@
     border-top: 1px dotted rgb(172, 172, 172);
 }
 
-/* Стилізація кожної лінії в характеристики */
+/* Стилізація кожної лінії в характеристиці */
 
 .hr-features-text.hr2_hdd{
-    width: 17.8%;
+    width: 17.59%;
 }
 .hr-features-text.hr3_hdd{
-    width: 16.37%;
+    width: 10.69%;
 }
 .hr-features-text.hr4_hdd{
-    width: 17.1%;
+    width: 19%;
 }
 .hr-features-text.hr5_hdd{
     width: 16.4%;
@@ -230,7 +230,7 @@
     width: 9.6%;
 }
 .hr-features-text.hr7_hdd{
-    width: 19.4%;
+    width: 11.1%;
 }
 .hr-features-text.hr8_hdd{
     width: 13.5%;
@@ -239,7 +239,7 @@
     width: 16.8%;
 }
 .hr-features-text.hr10_hdd{
-    width: 24.6%;
+    width: 19.4%;
 }
 
 /*Закінчення стилізації ліній*/

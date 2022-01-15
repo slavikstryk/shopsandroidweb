@@ -57,6 +57,10 @@ import IDCOOLINGAURAFLOWX240SNOW from './component/cpufan/IDCOOLINGSEAURAFLOWX24
 import IDCOOLINGFROSTFLOWX360 from './component/cpufan/IDCOOLINGFROSTFLOWX360/idcooligfrostflowx360';
 import IDCOOLINGZOOMFLOW360XT from './component/cpufan/IDCOOLINGZOOMFLOW360XT/idcooligzoomflow360xt';
 
+//HDD
+import WESTERNDIGITALBLUE500GB from './component/hdd/Western Digital Blue 500GB/westerndigitalblue500gb';
+import WESTERNDIGITALBLUE1TB from './component/hdd/Western Digital Blue 1TB/westerndigitalblue1tb';
+
 function App() {
   return (
     <html>
@@ -106,6 +110,8 @@ function App() {
         <Route path="/id cooling auraflow x 240 snow" component={IDCOOLINGAURAFLOWX240SNOW}/>
         <Route path="/id cooling frostflow x 360" component={IDCOOLINGFROSTFLOWX360}/>
         <Route path="/id cooling zoomflow 360 xt" component={IDCOOLINGZOOMFLOW360XT}/>
+        <Route path="/western digital blue 500 gb" component={WESTERNDIGITALBLUE500GB}/>
+        <Route path="/western digital blue 1 tb" component={WESTERNDIGITALBLUE1TB}/>
         <Route path="/shop" component={Shop} />
         <Route path="/support" component={Support}/>
       </body>

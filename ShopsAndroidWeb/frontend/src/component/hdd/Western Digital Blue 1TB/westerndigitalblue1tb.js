@@ -181,7 +181,7 @@ export default class SSD120GBA400 extends Component {
         return (
             <body className="bg">
                 <div className="top-text-box">
-                    <h1 className="normal-text">Kingston A400 120GB 2.5" SATAIII TLC</h1>
+                    <h1 className="normal-text">Western Digital Blue 1TB 5400rpm</h1>
                 </div>
                 <div className="work-window">
                     <div className="s-images">
@@ -214,7 +214,7 @@ export default class SSD120GBA400 extends Component {
                     <div class="vl2"></div>
                     <div className="buy-set">
                         <div className="price-set">
-                            <h1 className="normal-text price">769</h1>
+                            <h1 className="normal-text price">1 403</h1>
                             <h2 className="normal-text sub-price">₴</h2>
                             <button className="butt-buy" onClick={this.scroll}>Купити</button>
                         </div>
@@ -237,64 +237,58 @@ export default class SSD120GBA400 extends Component {
                 </div>
                 <hr className="horizonline" />
                 <div className="features-box">
-                    <h3 className="features-text">Характеристики <span className="span-name">Kingston A400 120GB 2.5" SATAIII TLC</span></h3>
+                    <h3 className="features-text">Характеристики <span className="span-name">
+                        Western Digital Blue 1TB 5400rpm</span></h3>
                     <div className="features-items">
                         <div className="features-item">
                             <h3 className="features-text-t">Обсяг/Об'єм</h3>
                             <hr className="hr-features-text" />
-                            <h1 className="features-text-t">120 ГБ</h1>
+                            <h1 className="features-text-t">1 TB</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Країна виробник</h3>
-                            <hr className="hr-features-text hr2_ssd" />
+                            <hr className="hr-features-text hr2_hdd" />
                             <h1 className="features-text-t">Китай</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Швидкість читання</h3>
-                            <hr className="hr-features-text hr3_ssd" />
-                            <h1 className="features-text-t">до 500 МБ/сек</h1>
+                            <h3 className="features-text-t">Швидкість оберту шпинделя</h3>
+                            <hr className="hr-features-text hr3_hdd" />
+                            <h1 className="features-text-t">5400 об/хв</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Швидкість запису</h3>
-                            <hr className="hr-features-text hr4_ssd" />
-                            <h1 className="features-text-t">до 320 МБ/с</h1>
+                            <h3 className="features-text-t">Обсяг буферу</h3>
+                            <hr className="hr-features-text hr4_hdd" />
+                            <h1 className="features-text-t">64 МБ</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Енергоспоживання</h3>
-                            <hr className="hr-features-text hr5_ssd" />
-                            <h1 className="features-text-t">Максимум під час читання: 0.642 Вт<br />
-                                Максимум під час запису: 1.535 Вт<br />
-                                Максимум під час простою: 0.195 Вт</h1>
+                            <h3 className="features-text-t">Швидкість передавання даних</h3>
+                            <hr className="hr-features-text hr6_hdd" />
+                            <h1 className="features-text-t">6 ГБит/с</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Час напрацювання на відмову</h3>
-                            <hr className="hr-features-text hr6_ssd" />
-                            <h1 className="features-text-t">1 мільйон годин</h1>
-                        </div>
-                        <div className="features-item">
-                            <h3 className="features-text-t">Форм-фактор</h3>
-                            <hr className="hr-features-text hr7_ssd" />
-                            <h1 className="features-text-t">2.5"</h1>
+                            <h3 className="features-text-t">Максимальний рівень шуму</h3>
+                            <hr className="hr-features-text hr7_hdd" />
+                            <h1 className="features-text-t">24 дБА</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Інтерфейс підключення</h3>
-                            <hr className="hr-features-text hr8_ssd" />
+                            <hr className="hr-features-text hr8_hdd" />
                             <h1 className="features-text-t">SATAIII</h1>
                         </div>
                         <div className="features-item">
                             <h3 className="features-text-t">Тип накопичувача</h3>
-                            <hr className="hr-features-text hr9_ssd" />
+                            <hr className="hr-features-text hr9_hdd" />
                             <h1 className="features-text-t">Внутрішній</h1>
                         </div>
                         <div className="features-item">
-                            <h3 className="features-text-t">Вага</h3>
-                            <hr className="hr-features-text hr10_ssd" />
-                            <h1 className="features-text-t">41 г</h1>
+                            <h3 className="features-text-t">Форм-фактор</h3>
+                            <hr className="hr-features-text hr10_hdd" />
+                            <h1 className="features-text-t">3.5'</h1>
                         </div>
                     </div>
                 </div>
                 <h2 className="center">Оформити покупку</h2>
-                <BuyWindow product="SSD Kingston A400 120GB"/>
+                <BuyWindow product="Western Digital Blue 1TB 5400rpm"/>
             </body>
         )
     }
