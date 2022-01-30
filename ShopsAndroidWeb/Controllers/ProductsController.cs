@@ -14,14 +14,13 @@ using System.Text.RegularExpressions;
 namespace ShopsAndroidWeb.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class ProductsController : ControllerBase
     {
 
         static bool IsBase64(string base64)
         {
             base64 = base64.Trim();
-            return (base64.Length % 4 == 0) && Regex.IsMatch(base64, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
+            return (base64.Length % 4 == 0) && Regex.IsMatch(base64, @"^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$", RegexOptions.None);
         }
 
         public static string ImageToBase64()
@@ -45,7 +44,8 @@ namespace ShopsAndroidWeb.Controllers
             if (list.Count > 0)
             {
                 st = list;
-            } else if (list.Count <= 0)
+            }
+            else if (list.Count <= 0)
             {
                 st = "Empty list";
             }
@@ -55,18 +55,43 @@ namespace ShopsAndroidWeb.Controllers
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            object? item = null;
             var list = await _context.Products.ToListAsync();
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
-                return Ok(item_find);
+                item = item_find;
             }
-            else
+            else if (id > list.Count)
             {
                 var item_find = list.Last();
-                return Ok(item_find);
+                item = item_find;
             }
+            else if (id < 0)
+            {
+                id = 0;
+                var item_find = list.ElementAt(id);
+                item = item_find;
+            }
+            return Ok(item);
         }
+
+        [HttpGet]
+        [Route("getname/{name}")]
+        public async Task<IActionResult> GetByName(string name)
+        {
+            object? item = "Product not find!";
+            List<Product> dtos = _context.Products.ToList();
+            foreach (Product dto in dtos)
+            {
+                if (dto.Name == name)
+                {
+                    item = dto;
+                }
+            }
+            return Ok(item);
+        }
+
         [HttpPost]
         [Route("post")]
         public async Task<IActionResult> AddProduct([FromBody] ProductViewModels model)
@@ -75,7 +100,9 @@ namespace ShopsAndroidWeb.Controllers
             if (IsBase64(base64Image) != true)
             {
                 base64Image = ImageToBase64();
-            }else {
+            }
+            else
+            {
                 base64Image = model.Image;
             }
             var product = new Product
@@ -95,25 +122,28 @@ namespace ShopsAndroidWeb.Controllers
 
         [HttpDelete]
         [Route("delete")]
-        public async Task<IActionResult> RemoveProduct(int id)
+        public async Task<IActionResult> RemoveProduct(string name)
         {
-            id--;
-            var list = await _context.Products.ToListAsync();
-            int size = list.Count;
-            if (id <= size)
+            List<Product> dtos = _context.Products.ToList();
+            bool deleted = false;
+            foreach (Product dto in dtos)
             {
-                var item_delete = list.ElementAt(id);
-                _context.Products.Remove(item_delete);
-                _context.SaveChanges();
+                if (dto.Name == name)
+                {
+                    deleted = true;
+                    _context.Products.Remove(dto);
+                    _context.SaveChanges();
+                }
+            }
+            if (!deleted)
+            {
+                return BadRequest("Not find this item!");
             }
             else
             {
-                id = size--;
-                var item_delete = list.ElementAt(id);
-                _context.Products.Remove(item_delete);
-                _context.SaveChanges();
+                return Ok("Successfully deleted");
+
             }
-            return Ok();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,9 @@ namespace ShopsAndroidWeb.Models
 {
     public class ProductViewModels
     {
+        [Key]
+        public int id { get; set; }
+        [Required, StringLength(255)]
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
