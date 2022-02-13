@@ -40,7 +40,9 @@ namespace ShopsAndroidWeb.Controllers
         public async Task<IActionResult> GetAll()
         {
             object st = new();
-            var list = await _context.Products.ToListAsync();
+#pragma warning disable CS8604 // Possible null reference argument.
+            List<Product>? list = await _context.Products.ToListAsync();
+#pragma warning restore CS8604 // Possible null reference argument.
             if (list.Count > 0)
             {
                 st = list;
@@ -56,7 +58,9 @@ namespace ShopsAndroidWeb.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             object? item = null;
-            var list = await _context.Products.ToListAsync();
+#pragma warning disable CS8604 // Possible null reference argument.
+            List<Product>? list = await _context.Products.ToListAsync();
+#pragma warning restore CS8604 // Possible null reference argument.
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
@@ -78,17 +82,24 @@ namespace ShopsAndroidWeb.Controllers
 
         [HttpGet]
         [Route("getname/{name}")]
-        public async Task<IActionResult> GetByName(string name)
+        public IActionResult GetByName(string name)
         {
             object? item = "Product not find!";
+#pragma warning disable CS8604 // Possible null reference argument.
             List<Product> dtos = _context.Products.ToList();
+#pragma warning restore CS8604 // Possible null reference argument.
+            List<Product> products = new();
             foreach (Product dto in dtos)
             {
-                if (dto.Name == name)
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                if (dto.Name.Contains(name))
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 {
-                    item = dto;
+                    products.Add(dto);
                 }
             }
+            if (products.Count != 0)
+                item = products;
             return Ok(item);
         }
 
@@ -96,14 +107,18 @@ namespace ShopsAndroidWeb.Controllers
         [Route("post")]
         public async Task<IActionResult> AddProduct([FromBody] ProductViewModels model)
         {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string base64Image = model.Image;
+#pragma warning disable CS8604 // Possible null reference argument.
             if (IsBase64(base64Image) != true)
+#pragma warning restore CS8604 // Possible null reference argument.
             {
                 base64Image = ImageToBase64();
             }
             else
             {
                 base64Image = model.Image;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             }
             var product = new Product
             {
@@ -115,16 +130,20 @@ namespace ShopsAndroidWeb.Controllers
                 Link = model.Link,
                 IdentityANDROID = model.IndentityANDROID
             };
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             await _context.Products.AddAsync(product);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             _context.SaveChanges();
             return Ok(product.Id);
         }
 
         [HttpDelete]
-        [Route("delete")]
-        public async Task<IActionResult> RemoveProduct(string name)
+        [Route("delete/{name}")]
+        public IActionResult RemoveProduct(string name)
         {
+#pragma warning disable CS8604 // Possible null reference argument.
             List<Product> dtos = _context.Products.ToList();
+#pragma warning restore CS8604 // Possible null reference argument.
             bool deleted = false;
             foreach (Product dto in dtos)
             {

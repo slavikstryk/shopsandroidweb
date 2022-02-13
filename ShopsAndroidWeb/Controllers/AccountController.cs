@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ShopsAndroidWeb.Data.Entities.Identity;
 using ShopsAndroidWeb.Models;
 using ShopsAndroidWeb.Service;
@@ -34,7 +29,9 @@ namespace ShopsAndroidWeb.Controllers
                 Email = model.Email,
                 UserName = model.Username,
                 PhoneNumber = model.Phone,
+#pragma warning disable CS8601 // Possible null reference assignment.
                 Image = model.Image
+#pragma warning restore CS8601 // Possible null reference assignment.
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if(!result.Succeeded)

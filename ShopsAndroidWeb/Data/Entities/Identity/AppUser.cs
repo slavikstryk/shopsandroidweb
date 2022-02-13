@@ -8,7 +8,7 @@ namespace ShopsAndroidWeb.Data.Entities.Identity
 {
     public class AppUser : IdentityUser<long>
     {
-        public string Image { get; set; }
-        public virtual ICollection<AppUserRole> UserRoles { get; set; }
+        public string? Image { get; set; }
+        public virtual ICollection<AppUserRole>? UserRoles { get; set; }
     }
 }

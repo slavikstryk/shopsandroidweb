@@ -20,14 +20,18 @@ namespace ShopsAndroidWeb.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _context.Reports.ToListAsync();
+#pragma warning disable CS8604 // Possible null reference argument.
+            List<Report>? result = await _context.Reports.ToListAsync();
+#pragma warning restore CS8604 // Possible null reference argument.
             return Ok(result);
         }
 
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var list = await _context.Reports.ToListAsync();
+#pragma warning disable CS8604 // Possible null reference argument.
+            List<Report>? list = await _context.Reports.ToListAsync();
+#pragma warning restore CS8604 // Possible null reference argument.
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
@@ -53,7 +57,9 @@ namespace ShopsAndroidWeb.Controllers
                 Product = model.Product,
                 Text = model.Text
             };
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             await _context.Reports.AddAsync(report);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             _context.SaveChanges();
             return Ok(report.Id);
         }
@@ -63,7 +69,9 @@ namespace ShopsAndroidWeb.Controllers
         public async Task<IActionResult> RemoveReport(int id)
         {
             id--;
+#pragma warning disable CS8604 // Possible null reference argument.
             var list = await _context.Reports.ToListAsync();
+#pragma warning restore CS8604 // Possible null reference argument.
             int size = list.Count;
             if (id <= size)
             {
