@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using ShopsAndroidWeb.Data;
 using ShopsAndroidWeb.Data.Entities;
 using ShopsAndroidWeb.Models;
+using System.Net;
+using System.Net.Mail;
 
 namespace ShopsAndroidWeb.Controllers
 {
@@ -20,18 +22,14 @@ namespace ShopsAndroidWeb.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Report>? result = await _context.Reports.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             return Ok(result);
         }
 
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Report>? list = await _context.Reports.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
@@ -50,6 +48,7 @@ namespace ShopsAndroidWeb.Controllers
         {
             var report = new Report
             {
+                Id = _context.Reports.Count() + 1,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
@@ -57,36 +56,28 @@ namespace ShopsAndroidWeb.Controllers
                 Product = model.Product,
                 Text = model.Text
             };
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             await _context.Reports.AddAsync(report);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
             _context.SaveChanges();
             return Ok(report.Id);
         }
 
         [HttpDelete]
-        [Route("delete")]
+        [Route("delete/{id}")]
         public async Task<IActionResult> RemoveReport(int id)
         {
-            id--;
-#pragma warning disable CS8604 // Possible null reference argument.
-            var list = await _context.Reports.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
-            int size = list.Count;
-            if (id <= size)
+            List<Report> list = await _context.Reports.ToListAsync();
+            var res = "Object not found";
+
+            foreach (Report item in list)
             {
-                var item_delete = list.ElementAt(id);
-                _context.Reports.Remove(item_delete);
-                _context.SaveChanges();
-            }
-            else
-            {
-                id = size--;
-                var item_delete = list.ElementAt(id);
-                _context.Reports.Remove(item_delete);
-                _context.SaveChanges();
-            }
-            return Ok();
+                if (item.Id == id)
+                {
+                    _context.Reports.Remove(item);
+                    await _context.SaveChangesAsync();
+                    res = "Sucessffully remove";
+                }
+            };
+            return Ok(res);
         }
     }
 }

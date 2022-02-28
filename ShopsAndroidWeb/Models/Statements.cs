@@ -12,5 +12,6 @@ namespace ShopsAndroidWeb.Models
         public string? PhoneNumber { get; set; }
         public string? EMail { get; set; }
         public string? Product { get; set; }
+        public string? Status { get; set; }
     }
 }

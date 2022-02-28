@@ -45,19 +45,22 @@ namespace ShopsAndroidWeb.Controllers
 
         [HttpPost]
         [Route("post")]
-        public async Task<IActionResult> AddStatement([FromBody] Statements model)
+        public async Task<IActionResult> AddStatement([FromBody] Statement model)
         {
             var statement = new Statement
             {
+#pragma warning disable CS8604 // Possible null reference argument.
+                Id = _context.Statements.Count()+1,
+#pragma warning restore CS8604 // Possible null reference argument.
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
                 EMail = model.EMail,
-                Product = model.Product
+                Product = model.Product,
+                Status = model.Status,
+                Process = "ні"
             };
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             await _context.Statements.AddAsync(statement);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
             _context.SaveChanges();
             return Ok(statement.Id);
         }
@@ -76,7 +79,8 @@ namespace ShopsAndroidWeb.Controllers
                 result.PhoneNumber = statement.PhoneNumber;
                 result.EMail = statement.EMail;
                 result.Product = statement.Product;
-
+                result.Status = statement.Status;
+                result.Process = statement.Process;
 
                 await _context.SaveChangesAsync();
 
@@ -85,28 +89,37 @@ namespace ShopsAndroidWeb.Controllers
             return null;
         }
         [HttpDelete]
-        [Route("delete")]
+        [Route("delete/{id}")]
         public async Task<IActionResult> RemoveStatement(int id)
         {
             id--;
 #pragma warning disable CS8604 // Possible null reference argument.
             List<Statement>? list = await _context.Statements.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
+            object res = "";
             int size = list.Count;
-            if (id <= size)
+            if (size != 0)
             {
-                var item_delete = list.ElementAt(id);
-                _context.Statements.Remove(item_delete);
-                _context.SaveChanges();
-            }
-            else
+                if (id < size)
+                {
+                    var item_delete = list.ElementAt(id);
+                    _context.Statements.Remove(item_delete);
+                    _context.SaveChanges();
+                    res = "Index updated";
+                }
+                else if (id >= size)
+                {
+                    id = size;
+                    id--;
+                    var item_delete = list.ElementAt(id);
+                    _context.Statements.Remove(item_delete);
+                    _context.SaveChanges();
+                    res = "Index updated last item";
+                }
+            } else if (size <= 0)
             {
-                id = size--;
-                var item_delete = list.ElementAt(id);
-                _context.Statements.Remove(item_delete);
-                _context.SaveChanges();
+                res = "List is empty";
             }
-            return Ok();
+            return Ok(res);
         }
 
     }

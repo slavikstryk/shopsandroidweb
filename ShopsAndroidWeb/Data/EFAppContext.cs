@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ShopsAndroidWeb.Data.Entities;
 using ShopsAndroidWeb.Data.Entities.Identity;
+using ShopsAndroidWeb.Models;
 
 namespace ShopsAndroidWeb.Data
 {

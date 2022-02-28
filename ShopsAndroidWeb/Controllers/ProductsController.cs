@@ -122,6 +122,9 @@ namespace ShopsAndroidWeb.Controllers
             }
             var product = new Product
             {
+#pragma warning disable CS8604 // Possible null reference argument.
+                Id = _context.Products.Count() + 1,
+#pragma warning restore CS8604 // Possible null reference argument.
                 Name = model.Name,
                 Description = model.Description,
                 Price = decimal.Parse("" + model.Price),
@@ -135,6 +138,37 @@ namespace ShopsAndroidWeb.Controllers
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             _context.SaveChanges();
             return Ok(product.Id);
+        }
+
+        [HttpPut]
+        [Route("update/{id}")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+        {
+#pragma warning disable CS8604 // Possible null reference argument.
+            int size = _context.Products.Count();
+            object res = "";
+            if (size != 0)
+            {
+                Product? result = await _context.Products.FirstOrDefaultAsync(e => e.Id == product.Id);
+#pragma warning restore CS8604 // Possible null reference argument.
+                if (result != null)
+                {
+                    result.Name = product.Name;
+                    result.Price = product.Price;
+                    result.Image = product.Image;
+                    result.TypeProduct = product.TypeProduct;
+                    result.Description = product.Description;
+                    result.Link = product.Link;
+                    result.IdentityANDROID = product.IdentityANDROID;
+
+                    res = "Successfull update";
+                    _context.SaveChanges();
+                }
+            } else if (size <= 0)
+            {
+                res = "List empty!";
+            }
+            return Ok(res);
         }
 
         [HttpDelete]

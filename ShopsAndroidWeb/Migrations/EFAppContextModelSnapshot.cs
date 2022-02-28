@@ -17,7 +17,7 @@ namespace ShopsAndroidWeb.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -119,23 +119,18 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BuyersEmail")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("BuyersLastName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("BuyersName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("BuyersPhone")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("DeliveryAdress")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ProductName")
@@ -144,11 +139,9 @@ namespace ShopsAndroidWeb.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<string>("ProductPrice")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -208,7 +201,6 @@ namespace ShopsAndroidWeb.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("LockoutEnabled")
@@ -280,19 +272,15 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("IdentityANDROID")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Link")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
@@ -300,11 +288,10 @@ namespace ShopsAndroidWeb.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal?>("Price")
                         .HasColumnType("numeric");
 
                     b.Property<string>("TypeProduct")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -321,7 +308,6 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Priority")
@@ -346,7 +332,6 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
@@ -355,19 +340,15 @@ namespace ShopsAndroidWeb.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Product")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Text")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -384,7 +365,6 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("EMail")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
@@ -393,15 +373,18 @@ namespace ShopsAndroidWeb.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Process")
                         .HasColumnType("text");
 
                     b.Property<string>("Product")
-                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
                         .HasColumnType("text");
 
                     b.HasKey("Id");

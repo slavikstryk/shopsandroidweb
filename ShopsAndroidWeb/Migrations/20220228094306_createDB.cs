@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ShopsAndroidWeb.Migrations
 {
-    public partial class Addtables : Migration
+    public partial class createDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,7 +31,7 @@ namespace ShopsAndroidWeb.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Image = table.Column<string>(type: "text", nullable: false),
+                    Image = table.Column<string>(type: "text", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -53,16 +53,75 @@ namespace ShopsAndroidWeb.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DeliveredProducts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ProductName = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    BuyersName = table.Column<string>(type: "text", nullable: true),
+                    BuyersLastName = table.Column<string>(type: "text", nullable: true),
+                    ProductPrice = table.Column<string>(type: "text", nullable: true),
+                    BuyersEmail = table.Column<string>(type: "text", nullable: true),
+                    BuyersPhone = table.Column<string>(type: "text", nullable: true),
+                    DeliveryAdress = table.Column<string>(type: "text", nullable: true),
+                    Status = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DeliveredProducts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reports",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    FirstName = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "text", nullable: true),
+                    Product = table.Column<string>(type: "text", nullable: true),
+                    Text = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reports", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Statements",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    FirstName = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "text", nullable: true),
+                    EMail = table.Column<string>(type: "text", nullable: true),
+                    Product = table.Column<string>(type: "text", nullable: true),
+                    Status = table.Column<string>(type: "text", nullable: true),
+                    Process = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Statements", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tblProducts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    Image = table.Column<string>(type: "text", nullable: false),
-                    TypeProduct = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false)
+                    Price = table.Column<decimal>(type: "numeric", nullable: true),
+                    Image = table.Column<string>(type: "text", nullable: true),
+                    TypeProduct = table.Column<string>(type: "text", nullable: true),
+                    Description = table.Column<string>(type: "text", nullable: true),
+                    Link = table.Column<string>(type: "text", nullable: true),
+                    IdentityANDROID = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -181,7 +240,7 @@ namespace ShopsAndroidWeb.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
                     Priority = table.Column<int>(type: "integer", nullable: false),
                     ProductId = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -255,6 +314,15 @@ namespace ShopsAndroidWeb.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "DeliveredProducts");
+
+            migrationBuilder.DropTable(
+                name: "Reports");
+
+            migrationBuilder.DropTable(
+                name: "Statements");
 
             migrationBuilder.DropTable(
                 name: "tblProductImages");

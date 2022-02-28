@@ -12,14 +12,14 @@ using ShopsAndroidWeb.Data;
 namespace ShopsAndroidWeb.Migrations
 {
     [DbContext(typeof(EFAppContext))]
-    [Migration("20211211141016_Add tables")]
-    partial class Addtables
+    [Migration("20220228094306_createDB")]
+    partial class createDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -112,6 +112,45 @@ namespace ShopsAndroidWeb.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ShopsAndroidWeb.Data.Entities.DeliveredProducts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BuyersEmail")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BuyersLastName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BuyersName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BuyersPhone")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DeliveryAdress")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("ProductPrice")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DeliveredProducts");
+                });
+
             modelBuilder.Entity("ShopsAndroidWeb.Data.Entities.Identity.AppRole", b =>
                 {
                     b.Property<long>("Id")
@@ -164,7 +203,6 @@ namespace ShopsAndroidWeb.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("LockoutEnabled")
@@ -236,11 +274,15 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("IdentityANDROID")
                         .HasColumnType("text");
 
                     b.Property<string>("Image")
-                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Link")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
@@ -248,11 +290,10 @@ namespace ShopsAndroidWeb.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal?>("Price")
                         .HasColumnType("numeric");
 
                     b.Property<string>("TypeProduct")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -269,7 +310,6 @@ namespace ShopsAndroidWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Priority")
@@ -283,6 +323,75 @@ namespace ShopsAndroidWeb.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("tblProductImages");
+                });
+
+            modelBuilder.Entity("ShopsAndroidWeb.Data.Entities.Report", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Product")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reports");
+                });
+
+            modelBuilder.Entity("ShopsAndroidWeb.Data.Entities.Statement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("EMail")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Process")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Product")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Statements");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<long>", b =>

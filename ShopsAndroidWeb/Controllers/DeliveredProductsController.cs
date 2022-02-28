@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using ShopsAndroidWeb.Data;
 using ShopsAndroidWeb.Data.Entities;
+using System.Net;
+using System.Net.Mail;
 
 namespace ShopsAndroidWeb.Controllers
 {
@@ -19,18 +21,14 @@ namespace ShopsAndroidWeb.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<DeliveredProducts>? list = await _context.DeliveredProducts.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             return Ok(list);
         }
 
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             var list = await _context.DeliveredProducts.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
@@ -49,9 +47,7 @@ namespace ShopsAndroidWeb.Controllers
         {
             var delivered = new DeliveredProducts
             {
-#pragma warning disable CS8604 // Possible null reference argument.
-                Id = _context.DeliveredProducts.Count()+1,
-#pragma warning restore CS8604 // Possible null reference argument.
+                Id = _context.DeliveredProducts.Count() + 1,
                 ProductName = model.ProductName,
                 BuyersLastName = model.BuyersLastName,
                 ProductPrice = model.ProductPrice,
@@ -69,19 +65,18 @@ namespace ShopsAndroidWeb.Controllers
         [Route("update")]
         public async Task<IActionResult?> UpdateDelivered([FromBody] DeliveredProducts delivered)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             var result = await _context.DeliveredProducts.FirstOrDefaultAsync(e => e.Id == delivered.Id);
-#pragma warning restore CS8604 // Possible null reference argument.
             if (result != null)
             {
+                result.Id = delivered.Id;
                 result.ProductName = delivered.ProductName;
                 result.BuyersLastName = delivered.BuyersLastName;
                 result.ProductPrice = delivered.ProductPrice;
                 result.BuyersName = delivered.BuyersName;
                 result.BuyersEmail = delivered.BuyersEmail;
                 result.BuyersPhone = delivered.BuyersPhone;
-                result.Status = delivered.Status;
                 result.DeliveryAdress = delivered.DeliveryAdress;
+                result.Status = delivered.Status;
 
                 await _context.SaveChangesAsync();
 
@@ -94,9 +89,7 @@ namespace ShopsAndroidWeb.Controllers
         [Route("delete/{id}")]
         public IActionResult RemoveDelivered(int id)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<DeliveredProducts> list = _context.DeliveredProducts.ToList();
-#pragma warning restore CS8604 // Possible null reference argument.
             object? res = "Item not found";
 
             foreach (DeliveredProducts dto in list)
@@ -112,5 +105,16 @@ namespace ShopsAndroidWeb.Controllers
             return Ok(res);
         }
 
+        [HttpDelete]
+        [Route("clear")]
+        public IActionResult AllRemoveDelivered()
+        {
+            foreach (DeliveredProducts dto in _context.DeliveredProducts.ToList())
+            {
+                _context.DeliveredProducts.Remove(dto);
+                _context.SaveChanges();
+            }
+            return Ok();
+        }
     }
 }
