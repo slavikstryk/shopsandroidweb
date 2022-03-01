@@ -20,7 +20,7 @@ namespace ShopsAndroidWeb.Controllers
         static bool IsBase64(string base64)
         {
             base64 = base64.Trim();
-            return (base64.Length % 4 == 0) && Regex.IsMatch(base64, @"^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$", RegexOptions.None);
+            return (base64.Length % 4 == 0) && Regex.IsMatch(base64, @"/^(?:[A-Za-z\d+/]{4})*(?:[A-Za-z\d+/]{3}=|[A-Za-z\d+/]{2}==)?$/", RegexOptions.None);
         }
 
         public static string ImageToBase64()
@@ -85,9 +85,7 @@ namespace ShopsAndroidWeb.Controllers
         public IActionResult GetByName(string name)
         {
             object? item = "Product not find!";
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Product> dtos = _context.Products.ToList();
-#pragma warning restore CS8604 // Possible null reference argument.
             List<Product> products = new();
             foreach (Product dto in dtos)
             {
@@ -109,9 +107,7 @@ namespace ShopsAndroidWeb.Controllers
         {
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string base64Image = model.Image;
-#pragma warning disable CS8604 // Possible null reference argument.
             if (IsBase64(base64Image) != true)
-#pragma warning restore CS8604 // Possible null reference argument.
             {
                 base64Image = ImageToBase64();
             }
@@ -122,9 +118,7 @@ namespace ShopsAndroidWeb.Controllers
             }
             var product = new Product
             {
-#pragma warning disable CS8604 // Possible null reference argument.
                 Id = _context.Products.Count() + 1,
-#pragma warning restore CS8604 // Possible null reference argument.
                 Name = model.Name,
                 Description = model.Description,
                 Price = decimal.Parse("" + model.Price),
@@ -133,9 +127,7 @@ namespace ShopsAndroidWeb.Controllers
                 Link = model.Link,
                 IdentityANDROID = model.IndentityANDROID
             };
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             await _context.Products.AddAsync(product);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
             _context.SaveChanges();
             return Ok(product.Id);
         }
@@ -144,13 +136,11 @@ namespace ShopsAndroidWeb.Controllers
         [Route("update/{id}")]
         public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             int size = _context.Products.Count();
             object res = "";
             if (size != 0)
             {
                 Product? result = await _context.Products.FirstOrDefaultAsync(e => e.Id == product.Id);
-#pragma warning restore CS8604 // Possible null reference argument.
                 if (result != null)
                 {
                     result.Name = product.Name;
@@ -197,6 +187,19 @@ namespace ShopsAndroidWeb.Controllers
                 return Ok("Successfully deleted");
 
             }
+        }
+
+        [HttpDelete]
+        [Route("clear")]
+        public async Task<IActionResult> ClearProducts()
+        {
+            List<Product> dtos = await _context.Products.ToListAsync();
+            foreach (Product dto in dtos)
+            {
+                _context.Products.Remove(dto);
+                _context.SaveChanges();
+            }
+            return Ok();
         }
     }
 }

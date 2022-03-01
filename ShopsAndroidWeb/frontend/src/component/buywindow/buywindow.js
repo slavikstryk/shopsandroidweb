@@ -85,7 +85,7 @@ export default class BuyWindow extends Component{
                         </div>
                     </div>
                     <div className="butt-set">
-                        <button className="butt-buy" type="submit">Подати заявку</button>
+                        <button className="butt-buy" type="submit">Пoдaти зaявкy</button>
                     </div>
                 </form>
             </body>

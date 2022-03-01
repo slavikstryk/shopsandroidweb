@@ -61,6 +61,9 @@ import IDCOOLINGZOOMFLOW360XT from './component/cpufan/IDCOOLINGZOOMFLOW360XT/id
 import WESTERNDIGITALBLUE500GB from './component/hdd/Western Digital Blue 500GB/westerndigitalblue500gb';
 import WESTERNDIGITALBLUE1TB from './component/hdd/Western Digital Blue 1TB/westerndigitalblue1tb';
 
+//ADMIN
+import AdminPanel from './component/adminPanel/adminPanel';
+
 function App() {
   return (
     <html>
@@ -114,6 +117,7 @@ function App() {
         <Route path="/western digital blue 1 tb" component={WESTERNDIGITALBLUE1TB}/>
         <Route path="/shop" component={Shop} />
         <Route path="/support" component={Support}/>
+        <Route path="/F u L F R e d n e o L t O U N k I n q U e l D o U S P i e r I t i r E n t L o u s i g i o U N t r E" component={AdminPanel}/>
       </body>
     </html>
   );
