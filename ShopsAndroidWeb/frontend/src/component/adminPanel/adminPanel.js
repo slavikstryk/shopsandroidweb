@@ -29,6 +29,10 @@ export default class AdminPanel extends Component {
         });
     }
 
+    productClick = event => {
+
+    }
+
     render() {
         return (
             <body className="background">
@@ -37,6 +41,26 @@ export default class AdminPanel extends Component {
                     <h1 className="white-color">ADMIN PANEL</h1>
                     <div className="line-dotted"></div>
                 </div>
-            </body>)
+                <div className="sel-bar">
+                    <h1 className="sp-text" onClick={this.productClick}>PRODUCT</h1>
+                    <div className="vl-bar"></div>
+                    <h1 id="statText" className="sp-text">STATEMENT</h1>
+                    <div className="vl-bar"></div>
+                    <h1 className="sp-text">REPORTS</h1>
+                    <div className="vl-bar"></div>
+                    <h1 className="sp-text">DELIVERED</h1>
+                </div>
+                <div className="line-dotted"></div>
+                <div className="sel-bar">
+                    <h1 className="sp-text" onClick={this.productClick}>POST</h1>
+                    <div className="vl-bar"></div>
+                    <h1 id="statText" className="sp-text">DELETE</h1>
+                    <div className="vl-bar"></div>
+                    <h1 className="sp-text">GET</h1>
+                    <div className="vl-bar"></div>
+                    <h1 className="sp-text">PUT</h1>
+                </div>
+            </body>
+        )
     }
 }

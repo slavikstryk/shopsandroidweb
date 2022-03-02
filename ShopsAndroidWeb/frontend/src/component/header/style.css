@@ -1,115 +1,120 @@
-*{
-    user-select: none;
-    -webkit-user-drag: none;
-  }
-  
-  .bg{
-    width: auto;
-    height: 70px;
-    display: flex;
-    justify-items: flex-end;
-    
-  }
-  
-  .imgmain{
-    background: transparent;
-    height: 85%;
-    justify-content: center;
-    min-width: 0%;
-    width: 15%;
-    margin-top: 5px;
-    }
-  
-  .imgmain:hover{
-    cursor: pointer;
-  }
-  .body{
-    display: flex;
-    height: 100%;
-  }
-  
-  a:visited{
-    outline: none;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-  }
-  
-  a{
-    font-size: 18px;
-    height: 100%;
-    vertical-align: bottom;
-    text-decoration: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-  }
-  
-  .links-box{
-    display: flex;
-    justify-content: center;
-    margin-right: 4%;
-    width: 100%;
-  }
-  
-  .top-bar{
-    width: 100%;
-    background: black;
-    max-height: 60px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .search-input{
-    vertical-align: middle;
-    background: none;
-    outline: none;
-  }
-  
-  .account-icon{
-    max-height: 100%;
-    margin: 0.4%;
-    max-width: 100%;
-  }
-  
-  .butt-link{
-    background: #2F2F32;
-    font-size: 12pt;
-    width: auto;
-    vertical-align: inherit;
-    color: rgb(255, 255, 255);
-    line-height: 350%;
-    text-decoration: none;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto;
-  }
-  
-  .butt-link:hover{
-    color: #b1b1c9;
-  }
+* {
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
-  .butt-link-two{
-    background: #000000;
-    font-size: 12pt;
-    color: rgb(168, 168, 168);
-    width: auto;
-    vertical-align: inherit;
-    line-height: 350%;
-    text-decoration: none;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto;
-  }
+.bg {
+  width: auto;
+  height: 70px;
+  display: flex;
+  justify-items: flex-end;
 
-  .butt-link-two:hover{
-    color: white;
-  }
+}
 
-  .butt-link-two:visited{
-    color: rgb(168, 168, 168);
-  }
+.imgmain {
+  background: transparent;
+  height: 85%;
+  justify-content: center;
+  min-width: 0%;
+  width: 140px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
 
-  .butt-link-two:visited:hover{
-    color: rgb(255, 255, 255);
-  }
+.imgmain:hover {
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  height: 100%;
+}
+
+a:visited {
+  outline: none;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+a {
+  font-size: 18px;
+  height: 100%;
+  vertical-align: bottom;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+}
+
+.links-box {
+  display: flex;
+  justify-content: center;
+  margin-right: 4%;
+  width: 100%;
+}
+
+.top-bar {
+  width: 100%;
+  background: black;
+  max-height: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-input {
+  vertical-align: middle;
+  background: none;
+  outline: none;
+}
+
+.account-icon {
+  max-height: 100%;
+  margin: 0.4%;
+  max-width: 100%;
+}
+
+.butt-link {
+  background: #2F2F32;
+  font-size: 12pt;
+  width: auto;
+  vertical-align: inherit;
+  color: rgb(255, 255, 255);
+  padding-top: 18px;
+  padding-bottom: 17px;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+}
+
+.butt-link:hover {
+  color: #b1b1c9;
+}
+
+.butt-link-two {
+  background: #000000;
+  line-height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(168, 168, 168);
+  width: auto;
+  vertical-align: inherit;
+  margin-top: 17px;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+}
+
+.butt-link-two:hover {
+  color: white;
+}
+
+.butt-link-two:visited {
+  color: rgb(168, 168, 168);
+}
+
+.butt-link-two:visited:hover {
+  color: rgb(255, 255, 255);
+}
