@@ -40,9 +40,7 @@ namespace ShopsAndroidWeb.Controllers
         public async Task<IActionResult> GetAll()
         {
             object st = new();
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Product>? list = await _context.Products.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             if (list.Count > 0)
             {
                 st = list;
@@ -58,9 +56,7 @@ namespace ShopsAndroidWeb.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             object? item = null;
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Product>? list = await _context.Products.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
@@ -82,10 +78,10 @@ namespace ShopsAndroidWeb.Controllers
 
         [HttpGet]
         [Route("getname/{name}")]
-        public IActionResult GetByName(string name)
+        public async Task<IActionResult> GetByName(string name)
         {
             object? item = "Product not find!";
-            List<Product> dtos = _context.Products.ToList();
+            List<Product> dtos = await _context.Products.ToListAsync();
             List<Product> products = new();
             foreach (Product dto in dtos)
             {
@@ -97,7 +93,12 @@ namespace ShopsAndroidWeb.Controllers
                 }
             }
             if (products.Count != 0)
-                item = products;
+            {
+                List<Product> products1 = new();
+                products1.Add(products[0]);
+                if (products1.Count != 0)
+                    item = products1;
+            }
             return Ok(item);
         }
 
@@ -134,7 +135,7 @@ namespace ShopsAndroidWeb.Controllers
 
         [HttpPut]
         [Route("update/{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+        public async Task<IActionResult> UpdateProduct([FromBody] Product product)
         {
             int size = _context.Products.Count();
             object res = "";
@@ -154,7 +155,8 @@ namespace ShopsAndroidWeb.Controllers
                     res = "Successfull update";
                     _context.SaveChanges();
                 }
-            } else if (size <= 0)
+            }
+            else if (size <= 0)
             {
                 res = "List empty!";
             }
@@ -165,9 +167,7 @@ namespace ShopsAndroidWeb.Controllers
         [Route("delete/{name}")]
         public IActionResult RemoveProduct(string name)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Product> dtos = _context.Products.ToList();
-#pragma warning restore CS8604 // Possible null reference argument.
             bool deleted = false;
             foreach (Product dto in dtos)
             {
@@ -180,7 +180,7 @@ namespace ShopsAndroidWeb.Controllers
             }
             if (!deleted)
             {
-                return BadRequest("Not find this item!");
+                return Ok("Not find this item!");
             }
             else
             {

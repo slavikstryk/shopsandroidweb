@@ -109,7 +109,7 @@ export default class Support extends Component {
                         </div>
                         <button className="butt" type="submit">Submit</button>
                     </form>
-                    <h1 className="main-center-text">Happy Holidays</h1>
+                    <h1 className="main-center-text-s">Happy Holidays</h1>
                 </body>
             </html>
         )

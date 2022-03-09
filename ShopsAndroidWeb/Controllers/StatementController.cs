@@ -19,18 +19,14 @@ namespace ShopsAndroidWeb.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Statement>? list = await _context.Statements.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             return Ok(list);
         }
 
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Statement>? list = await _context.Statements.ToListAsync();
-#pragma warning restore CS8604 // Possible null reference argument.
             if (id < list.Count && id >= -1)
             {
                 var item_find = list.ElementAt(id);
@@ -49,15 +45,13 @@ namespace ShopsAndroidWeb.Controllers
         {
             var statement = new Statement
             {
-#pragma warning disable CS8604 // Possible null reference argument.
-                Id = _context.Statements.Count()+1,
-#pragma warning restore CS8604 // Possible null reference argument.
+                Id = _context.Statements.Count() + 1,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
                 EMail = model.EMail,
                 Product = model.Product,
-                Status = model.Status,
+                Status = "На складі",
                 Process = "ні"
             };
             await _context.Statements.AddAsync(statement);
@@ -69,9 +63,7 @@ namespace ShopsAndroidWeb.Controllers
         [Route("update")]
         public async Task<IActionResult?> UpdateStatement([FromBody] Statement statement)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             Statement? result = await _context.Statements.FirstOrDefaultAsync(e => e.Id == statement.Id);
-#pragma warning restore CS8604 // Possible null reference argument.
             if (result != null)
             {
                 result.FirstName = statement.FirstName;
@@ -93,7 +85,6 @@ namespace ShopsAndroidWeb.Controllers
         public async Task<IActionResult> RemoveStatement(int id)
         {
             id--;
-#pragma warning disable CS8604 // Possible null reference argument.
             List<Statement>? list = await _context.Statements.ToListAsync();
             object res = "";
             int size = list.Count;
@@ -115,12 +106,30 @@ namespace ShopsAndroidWeb.Controllers
                     _context.SaveChanges();
                     res = "Index updated last item";
                 }
-            } else if (size <= 0)
+            }
+            else if (size <= 0)
             {
                 res = "List is empty";
             }
             return Ok(res);
         }
 
+        [HttpDelete]
+        [Route("clear")]
+        public async Task<IActionResult> ClearStatements()
+        {
+            object? res = "List is empty!";
+            List<Statement> statements = await _context.Statements.ToListAsync();
+            if (statements.Count != 0)
+            {
+                foreach (Statement item in statements)
+                {
+                    _context.Statements.Remove(item);
+                    _context.SaveChanges();
+                }
+                res = "Cleared";
+            }
+            return Ok(res);
+        }
     }
 }
