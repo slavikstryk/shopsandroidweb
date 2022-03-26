@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import noimage from '../../images/noimage.png'
 import './style.css';
 
 class PostProd extends Component {
@@ -14,32 +13,12 @@ class PostProd extends Component {
         identityANDROID: ''
     }
 
-    base64 = "";
-
     onChangeInputHandler = (e) => {
         var target = e.target;
         this.setState({
             [target.name]: target.value
         })
     }
-
-    imgtob64(event) {
-        // eslint-disable-next-line
-        let files = event.target.files;
-        // eslint-disable-next-line
-        let reader = new FileReader();
-        // eslint-disable-next-line
-        reader.readAsDataURL(files[0]);
-
-        reader.onload = (e) => {
-
-            this.setState({
-                selectedFile: e.target.result,
-            })
-        }
-    }
-
-    
 
     postProdSubmit = event => {
         event.preventDefault();
@@ -85,12 +64,8 @@ class PostProd extends Component {
     }
 
     render() {
-        const fileInput = React.createRef();
-
         return (
             <div id="postProdPanel" className="center">
-                <img alt='imgPostProd' className="img-postProd" onClick={() => fileInput.current.click()} src={noimage} />
-                <input type="file" onChange={this.imgtob64(this)} ref={fileInput} style={{ display: 'none' }} />
                 <div className="work-window-product-post">
                     <div className="table-postProd">
                         <input
@@ -148,6 +123,7 @@ class DelProd extends Component {
     }
 
     nameDel = "";
+    nameSubDel = "";
 
     onChangeInputHandler = (e) => {
         var target = e.target;
@@ -167,10 +143,24 @@ class DelProd extends Component {
             axios.get(`http://127.0.0.1:5402/api/Products/getname/${this.nameDel}`)
                 .then(res => {
                     const products = res.data;
-                    this.setState({ products });
                     console.log(products);
-                    document.getElementById("sbmTextDelProd").style.visibility = "visible";
-                    document.getElementById("sbmTextDelProd").style.marginBottom = "10px";
+                    // eslint-disable-next-line
+                    if (products + "" != "Product not find!") {
+                        this.setState({ products });
+                        document.getElementById("sbmTextDelProd").style.visibility = "visible";
+                        document.getElementById("sbmTextDelProd").style.marginBottom = "10px";
+                        document.getElementById("del-submit-prod").style.visibility = "visible";
+                        this.nameSubDel = products.name;
+                        // eslint-disable-next-line
+                        this.state.products.map(product => {
+                            this.nameSubDel = product.name;
+                        });
+                        console.log(this.nameSubDel);
+                        // eslint-disable-next-line
+                    } else if (products == "Product not find!") {
+                        document.getElementById("nfindProd").style.visibility = "visible";
+                        setTimeout(this.nfindProdHide, 3000);
+                    }
                 }).catch()
         }
         setTimeout(this.clear, 2000);
@@ -185,12 +175,17 @@ class DelProd extends Component {
         document.getElementById("link").style.border = "1px dotted rgb(163, 163, 163)";
     }
 
-    delClick = event => {
+    nfindProdHide() {
+        document.getElementById("nfindProd").style.visibility = "collapse";
+    }
+
+    findClick = event => {
         event.preventDefault();
-        axios.delete(`http://127.0.0.1:5402/api/Products/delete/${this.nameDel}`)
+        axios.delete(`http://127.0.0.1:5402/api/Products/delete/${this.nameSubDel}`)
             .then(response => {
                 console.log(response);
-                document.getElementById("del-submit-prod").visibility = "collapse";
+                document.getElementById("del-submit-prod").style.visibility = "collapse";
+                document.getElementById("sbmTextDelProd").style.visibility = "collapse";
             })
     }
 
@@ -209,8 +204,9 @@ class DelProd extends Component {
                     </div>
                 </div>
                 <button id="prodSendButt" className="butt-" onClick={this.delProdSubmit}>DELETE</button>
+                <h2 className="font-color-admP" id="nfindProd">Product not find with this name</h2>
                 <div id="del-submit-prod" className="work-window card-del">
-                    <h2 className="font-color-admP" id="sbmTextDelProd">You realy to delete this item?</h2>
+                    <h2 className="font-color-admP" id="sbmTextDelProd">You realy to delete this item?</h2> 
                     <div className="card-del">
                         {this.state.products.map(product => <div className="carder">
                             <img alt="tite imag" className="img_submit_del_prod" src={`data:image/jpeg;base64,${product.image}`} />
@@ -226,6 +222,52 @@ class DelProd extends Component {
                             </div>
                         </div>)}
                     </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+class GetProd extends Component {
+    state = {
+        products: []
+    }
+
+    onChangeInputHandler = (e) => {
+        var target = e.target;
+        this.nameDel = target.value;
+        console.log(this.nameDel);
+    }
+
+    render() {
+        return (
+            <div id="getProdPanel">
+                <div className="work-window-product-post">
+                    <div className="table-postProd">
+                        <input
+                            id="nminptGetProd"
+                            placeholder="Product name"
+                            name="nameGet"
+                            onChange={this.onChangeInputHandler}
+                            className="inpt"
+                            type="text" />
+                    </div>
+                </div>
+                <button id="prodSendButt" className="butt-" onClick={this.delProdSubmit}>FIND</button>
+                <div className="card-del">
+                    {this.state.products.map(product => <div className="carder">
+                        <img alt="tite imag" className="img_submit_del_prod" src={`data:image/jpeg;base64,${product.image}`} />
+                        <div className="tab2_del_prod">
+                            <div className="bottom_border_dotted">
+                                <h3 className="tile tile-text font-color-admP">{product.name}</h3>
+                                <h4 className="tile tile-price font-color-admP">{product.price} UAN</h4>
+                            </div>
+                            <div className="flex_row flex_center">
+                                <button className="remov_butt_del_prod" onClick={this.delClick}>DELETE</button>
+                                <button className="cancel_butt_del_prod">CANCEL</button>
+                            </div>
+                        </div>
+                    </div>)}
                 </div>
             </div>
         )
@@ -343,6 +385,18 @@ export default class AdminPanel extends Component {
         document.getElementById("putProdText").style.backgroundColor = "#0f0e1f";
     }
 
+    getProdClick() {
+        document.getElementById("postProdPanel").style.visibility = "collapse";
+        document.getElementById("postProdPanel").style.height = "0px";
+        document.getElementById("delProdPanel").style.visibility = "visible";
+        document.getElementById("delProdPanel").style.height = "auto";
+
+        document.getElementById("postProdText").style.backgroundColor = "#0f0e1f";
+        document.getElementById("delProdText").style.backgroundColor = "#0f0e1f";
+        document.getElementById("getProdText").style.backgroundColor = "#1e1a41";
+        document.getElementById("putProdText").style.backgroundColor = "#0f0e1f";
+    }
+
     render() {
         window.onload = function () {
             document.getElementById("prodSetup").style.visibility = "collapse";
@@ -362,6 +416,7 @@ export default class AdminPanel extends Component {
             document.getElementById("delProdPanel").style.visibility = "collapse";
 
             document.getElementById("sbmTextDelProd").style.visibility = "collapse";
+            document.getElementById("nfindProd").style.visibility = "collapse";
         }
         return (
             <body className="background">
@@ -385,7 +440,7 @@ export default class AdminPanel extends Component {
                     <div className="vl-bar"></div>
                     <h1 id="delProdText" onClick={this.delProdClick} className="sp-text">DELETE</h1>
                     <div className="vl-bar"></div>
-                    <h1 id="getProdText" className="sp-text">GET</h1>
+                    <h1 id="getProdText" onClick={this.getProdClick} className="sp-text">GET</h1>
                     <div className="vl-bar"></div>
                     <h1 id="putProdText" className="sp-text">PUT</h1>
                 </div>
@@ -419,6 +474,7 @@ export default class AdminPanel extends Component {
                 <div className="line-dotted"></div>
                 <div className="sel-bar" id="postProd"><PostProd /></div>
                 <div className="sel-bar" id="delProd"><DelProd /></div>
+                <div className="sel-bar" id="getProd"><GetProd /></div>
             </body>
         )
     }

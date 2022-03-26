@@ -48,7 +48,6 @@ namespace ShopsAndroidWeb.Controllers
         {
             var report = new Report
             {
-                Id = _context.Reports.Count() + 1,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
@@ -56,8 +55,11 @@ namespace ShopsAndroidWeb.Controllers
                 Product = model.Product,
                 Text = model.Text
             };
-            await _context.Reports.AddAsync(report);
-            _context.SaveChanges();
+            if (report != null)
+            {
+                await _context.Reports.AddAsync(report);
+                _context.SaveChanges();
+            }
             return Ok(report.Id);
         }
 

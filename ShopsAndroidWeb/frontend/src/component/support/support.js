@@ -16,7 +16,7 @@ export default class Support extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        axios.post("http://192.168.0.108:5402/api/Report/post", this.state)
+        axios.post("http://127.0.0.1:5402/api/Report/post", this.state)
             .then(responce => {
                 console.log(responce);
             })
@@ -109,7 +109,6 @@ export default class Support extends Component {
                         </div>
                         <button className="butt" type="submit">Submit</button>
                     </form>
-                    <h1 className="main-center-text-s">Happy Holidays</h1>
                 </body>
             </html>
         )

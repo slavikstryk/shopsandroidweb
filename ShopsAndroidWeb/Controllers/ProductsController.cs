@@ -83,13 +83,17 @@ namespace ShopsAndroidWeb.Controllers
             object? item = "Product not find!";
             List<Product> dtos = await _context.Products.ToListAsync();
             List<Product> products = new();
-            foreach (Product dto in dtos)
+            if (dtos.Count > 0)
             {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-                if (dto.Name.Contains(name))
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                foreach (Product dto in dtos)
                 {
-                    products.Add(dto);
+                    if (dto.Name != null)
+                    {
+                        if (dto.Name.Contains(name))
+                        {
+                            products.Add(dto);
+                        }
+                    }
                 }
             }
             if (products.Count != 0)
