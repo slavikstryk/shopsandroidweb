@@ -49,7 +49,7 @@ namespace ShopsAndroidWeb.Controllers
                 SmtpClient smtp = new("smtp.gmail.com", 587)
                 {
                     Credentials = new NetworkCredential("terafer2020@gmail.com", "Yaroslav16"),
-                    EnableSsl = true 
+                    EnableSsl = true
                 };
                 smtp.Send(m);
                 res = "Sucessfull send";
