@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShopsAndroidWeb.Data;
-using ShopsAndroidWeb.Data.Entities;
-using ShopsAndroidWeb.Models;
 using System.Net;
 using System.Net.Mail;
 

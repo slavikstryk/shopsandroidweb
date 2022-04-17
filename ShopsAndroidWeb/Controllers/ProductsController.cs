@@ -20,7 +20,7 @@ namespace ShopsAndroidWeb.Controllers
         static bool IsBase64(string base64)
         {
             base64 = base64.Trim();
-            return (base64.Length % 4 == 0) && Regex.IsMatch(base64, @"/^(?:[A-Za-z\d+/]{4})*(?:[A-Za-z\d+/]{3}=|[A-Za-z\d+/]{2}==)?$/", RegexOptions.None);
+            return (base64.Length % 4 == 0) && Regex.IsMatch(base64, @"/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}={2})$/", RegexOptions.None);
         }
 
         public static string ImageToBase64()
@@ -110,16 +110,10 @@ namespace ShopsAndroidWeb.Controllers
         [Route("post")]
         public async Task<IActionResult> AddProduct([FromBody] ProductViewModels model)
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-            string base64Image = model.Image;
-            if (IsBase64(base64Image) != true)
-            {
-                base64Image = ImageToBase64();
-            }
-            else
+            string base64Image = null;
+            if (model.Image != null)
             {
                 base64Image = model.Image;
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             }
             var product = new Product
             {

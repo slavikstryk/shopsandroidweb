@@ -294,6 +294,11 @@ export default class R1200AMD extends Component {
                 </div>
                 <h2 className="center">Оформити покупку</h2>
                 <BuyWindow product="AMD Ryzen 3 1200 3.2Ghz"/>
+                <div className="similar-products">
+                    <ul>
+                        
+                    </ul>
+                </div>
             </body>
         )
     }
