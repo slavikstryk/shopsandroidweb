@@ -5,7 +5,7 @@
 namespace ShopsAndroidWeb.Migrations
 {
     public partial class Changedatabase : Migration
-    {
+    { 
         protected override void Up(MigrationBuilder migrationBuilder)
         {
 
